@@ -11,7 +11,7 @@ void global::geometry(QMainWindow* currentWindow) {
 }
 
 ////////////////////////////////////////////////////////
-//                   Go other window                  //
+//                 Go to other window                 //
 ////////////////////////////////////////////////////////
 
 void global::openLockscreen(QMainWindow* currentWindow) { // Added 'global::' before 'Lockscreen'

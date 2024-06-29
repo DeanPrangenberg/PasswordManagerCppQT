@@ -23,8 +23,8 @@ private slots:
 
 private:
     QPushButton *_buttonConfirm;
-    QLineEdit *_inputField; // Declare QLineEdit member variable
-    std::string passwordUserIn; // Declare passwordUserIn as a member variable
+    QLineEdit *_inputField;
+    std::string passwordUserIn;
     std::string MasterPassword = "gg";
 };
 #endif //PASSWORDMANAGERCPPQT_LOCKSCREEN_H

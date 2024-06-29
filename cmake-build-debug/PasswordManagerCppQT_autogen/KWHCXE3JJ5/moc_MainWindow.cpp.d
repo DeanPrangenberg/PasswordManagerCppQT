@@ -161,7 +161,7 @@ S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/KW
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QPushButton \
-  C:/Qt/6.6.1/mingw_64/include/QtWidgets/QScrollArea \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/QTextEdit \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -175,9 +175,9 @@ S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/KW
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlineedit.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qpushbutton.h \
-  C:/Qt/6.6.1/mingw_64/include/QtWidgets/qscrollarea.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabwidget.h \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtextedit.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

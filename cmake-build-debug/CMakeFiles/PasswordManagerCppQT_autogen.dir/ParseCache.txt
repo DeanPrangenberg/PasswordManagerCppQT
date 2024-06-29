@@ -543,7 +543,7 @@ S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QPushButton
- mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QScrollArea
+ mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QTextEdit
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -557,9 +557,9 @@ S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qpushbutton.h
- mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qscrollarea.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabwidget.h
+ mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtextedit.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgetsexports.h
  mdp:C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h
@@ -774,8 +774,8 @@ S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
 S:/GitHub/PasswordManagerCppQT/src/global/Global.h
 S:/GitHub/PasswordManagerCppQT/src/database/sqlite3.h
 S:/GitHub/PasswordManagerCppQT/main.cpp
-S:/GitHub/PasswordManagerCppQT/src/database/database.cpp
+S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp
 S:/GitHub/PasswordManagerCppQT/src/global/Global.cpp
 S:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.cpp
-S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp
+S:/GitHub/PasswordManagerCppQT/src/database/database.cpp
 S:/GitHub/PasswordManagerCppQT/src/database/sqlite3.c

@@ -14,8 +14,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(PasswordManagerCppQT main.cpp src/database/sqlite3.c
-        src/database/database.cpp
+add_executable(PasswordManagerCppQT main.cpp
         src/Lockscreen/Lockscreen.cpp
         src/Lockscreen/Lockscreen.h
         src/global/Global.cpp

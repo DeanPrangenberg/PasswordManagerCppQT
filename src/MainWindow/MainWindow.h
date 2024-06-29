@@ -5,12 +5,12 @@
 #ifndef PASSWORDMANAGERCPPQT_MAINWINDOW_H
 #define PASSWORDMANAGERCPPQT_MAINWINDOW_H
 
+#include <QApplication>
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLineEdit>
-#include <QApplication>
 #include <QLabel>
-#include <QScrollArea>
+#include <QTextEdit>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
@@ -21,27 +21,34 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
 private slots:
-
+    void changeSort();
+    void newEntry();
+    void showPasswords();
+    void showPasswordGen();
+    void delPassword();
+    void editPassword();
+    void ChangeMasterPassword();
+    void lockScreen();
 
 private:
-    QLabel *_LabelLogo;
-
     // Sidebar
-    QPushButton *_ButtonShowAll;
+    QWidget *_sidebarWidget;
+    QVBoxLayout *_sidebarLayout;
+    QLabel *_LabelLogo;
     QPushButton *_ButtonShowPasswords;
-    QPushButton *_ButtonShowAddress;
-    QPushButton *_ButtonShowBank;
     QPushButton *_ButtonShowPasswordGen;
-    QPushButton *_ButtonShowSetting;
+    QPushButton *_ButtonAddEntry;
+    QPushButton *_ButtonCloseMenu;
+    QPushButton *_ButtonChangeMasterPassword;
+    QPushButton *_ButtonDelPassword;
+    QPushButton *_ButtonEditPassword;
 
     // Topbar
-    QPushButton *_ButtonAddEntry;
+    QHBoxLayout *_topBarLayout;
+    QWidget *_topBarWidget;
     QPushButton *_ButtonStartSearch;
-    QLabel *_LabelNameListing;
+    QPushButton *_ButtonChangeSort;
     QLineEdit *_inputSearch;
-
-    // var
-    QString openTab;
 
 };
 #endif //PASSWORDMANAGERCPPQT_MAINWINDOW_H
