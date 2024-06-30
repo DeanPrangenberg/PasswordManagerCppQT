@@ -21,6 +21,8 @@
 #include <QClipboard>
 #include <QFile>
 #include <QGridLayout>
+#include <QCheckBox>
+#include <QGroupBox>
 
 class MainWindow : public QMainWindow {
 Q_OBJECT
@@ -38,42 +40,13 @@ private slots:
     void ChangeMasterPassword();
     void lockScreen();
     void ConfirmPassword();
+    void onAllowLowAlphabetToggled(bool checked);
+    void onAllowUpAlphabetToggled(bool checked);
+    void onAllowNumbersToggled(bool checked);
+    void onAllowSymbolsToggled(bool checked);
+    void startPasswordGen();
 
 private:
-    // Lockscreen
-    QWidget *_lockscreenWidget{};
-    QLayout *_lockscreenLayout{};
-    QPushButton *_buttonConfirm{};
-    QLineEdit *_inputField{};
-    QString _passwordUserIn;
-
-    // Sidebar widgets
-    QWidget *_sideBarWidget{};
-    QVBoxLayout *_sideBarLayout{};
-    QLabel *_LabelLogo{};
-    QPushButton *_ButtonShowPasswords{};
-    QPushButton *_ButtonShowPasswordGen{};
-    QPushButton *_ButtonAddEntry{};
-    QPushButton *_ButtonOpenLockscreen{};
-    QPushButton *_ButtonChangeMasterPassword{};
-    QPushButton *_ButtonDelPassword{};
-    QPushButton *_ButtonEditPassword{};
-
-    // Top bar widgets
-    QHBoxLayout *_topBarLayout{};
-    QWidget *_topBarWidget{};
-    QPushButton *_ButtonStartSearch{};
-    QPushButton *_ButtonChangeSort{};
-    QLineEdit *_inputSearch{};
-
-    // Center password list widgets
-    QWidget *_centerPasswordList{};
-    QScrollArea *_scrollArea{};
-    QGridLayout *_gridLayout{};
-
-    // Data storage
-    QVector<QVector<QString>> _passwordList;
-
     // UI setup
     void setupSidebar();
     void setupTopbar();
@@ -88,29 +61,83 @@ private:
     // on/off Ui
     void hideAll();
     void showStdMenu();
+    void showBars();
 
     // data handling
-    void checkPassword();
-    QString genPassword(int length, QString allowedChars);
-    void encryptPasswords();
-    QString genKey();
-    QString encryptString(const QString &input, const QString &key);
-    void decryptPasswords();
-    QString decryptString(const QString &input, const QString &key);
-    void fillPasswords();
     void populateGrid();
+    void checkPassword();
+    void fillPasswords();
+    void encryptPasswords();
+    void decryptPasswords();
+    QString genKey();
+    QString genPassword(int length, QString allowedChars);
+    QString encryptString(const QString &input, const QString &key);
+    QString decryptString(const QString &input, const QString &key);
+    void updateAllowedCharacters();
+
+    // Lockscreen
+    QWidget *_lockscreenWidget;
+    QVBoxLayout *_lockscreenLayout;
+    QPushButton *_buttonConfirm;
+    QLineEdit *_inputField;
+    QString _passwordUserIn;
+
+    // Sidebar widgets
+    QWidget *_sideBarWidget;
+    QVBoxLayout *_sideBarLayout;
+    QLabel *_LabelLogo;
+    QPushButton *_ButtonShowPasswords;
+    QPushButton *_ButtonShowPasswordGen;
+    QPushButton *_ButtonAddEntry;
+    QPushButton *_ButtonOpenLockscreen;
+    QPushButton *_ButtonChangeMasterPassword;
+    QPushButton *_ButtonDelPassword;
+    QPushButton *_ButtonEditPassword;
+
+    // Top bar widgets
+    QHBoxLayout *_topBarLayout;
+    QWidget *_topBarWidget;
+    QPushButton *_ButtonStartSearch;
+    QPushButton *_ButtonChangeSort;
+    QLineEdit *_inputSearch;
+
+    // Center password list
+    QWidget *_centerPasswordList;
+    QScrollArea *_scrollArea;
+    QGridLayout *_gridLayout;
+
+    // Center password generator
+    QWidget *_centerPasswordGen;
+    QLineEdit *_passwordOutput;
+    QLabel *_showLowAlphabet;
+    QLabel *_showUpAlphabet;
+    QLabel *_showNumbers;
+    QLineEdit *_showAllowedSymbols;
+    QLineEdit *_passwordLengthInput;
+    QCheckBox *_allowLowAlphabet;
+    QCheckBox *_allowUpAlphabet;
+    QCheckBox *_allowNumbers;
+    QCheckBox *_allowSymbols;
+    QPushButton *_startPasswordGen;
+    bool _allowLowAlphabetChecked;
+    bool _allowUpAlphabetChecked;
+    bool _allowNumbersChecked;
+    bool _allowSymbolsChecked;
+
+    // Data storage
+    QVector<QVector<QString>> _passwordList;
 
     // Constants
     const QString allChars = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    const int _screenHeight = 650; //norm 650
     const int _screenWidth = 1050; //norm 1050
+    const int _screenHeight = 650; //norm 650
     const int _middleWidthScreen = _screenWidth / 2;
     const int _middleHeightScreen = _screenHeight / 2;
 
     // Global var
     QString _masterPassword;
 
-
+    QString _allowedCharsPasswordGen;
 };
 
 #endif // PASSWORDMANAGERCPPQT_MAINWINDOW_H

@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setupSidebar();
     setupTopbar();
     setupCenterPasswordList();
+    setupPasswordGen();
 }
 
 ///////////
@@ -46,11 +47,22 @@ void MainWindow::newEntry() {
 }
 
 void MainWindow::showPasswords() {
-    // Implement show passwords logic here
+    hideAll();
+    showStdMenu();
+    _passwordOutput->clear();
+    _passwordLengthInput->setText("16");
 }
 
 void MainWindow::showPasswordGen() {
-    // Implement password generation logic here
+    qDebug() << "Entering showPasswordGen function";
+    hideAll();
+    showBars();
+    if (!_centerPasswordGen) {
+        qDebug() << "Center Password Generator Widget is null";
+    } else {
+        qDebug() << "Showing Center Password Generator Widget";
+        _centerPasswordGen->show();
+    }
 }
 
 void MainWindow::delPassword() {
@@ -65,24 +77,59 @@ void MainWindow::ChangeMasterPassword() {
     // Implement change master password logic hier
 }
 
+void MainWindow::onAllowLowAlphabetToggled(bool checked) {
+    _allowLowAlphabetChecked = checked;
+}
+
+void MainWindow::onAllowUpAlphabetToggled(bool checked) {
+    _allowUpAlphabetChecked = checked;
+}
+
+void MainWindow::onAllowNumbersToggled(bool checked) {
+    _allowNumbersChecked = checked;
+}
+
+void MainWindow::onAllowSymbolsToggled(bool checked) {
+    _allowSymbolsChecked = checked;
+}
+
+void MainWindow::startPasswordGen() {
+    updateAllowedCharacters();
+    bool ok = false;
+    int passwordLength = _passwordLengthInput->text().toInt(&ok);
+    if (!ok) {
+        qDebug() << "Invalid password length input!";
+        return;
+    }
+    QString Password = genPassword(passwordLength, _allowedCharsPasswordGen);
+    _passwordOutput->setText(Password);
+}
+
 ///////////////
 // off/on ui //
 ///////////////
 
 void MainWindow::showStdMenu() {
-    _sideBarWidget->show();
-    _topBarWidget->show();
+    showBars();
     _centerPasswordList->show();
-    _LabelLogo->show();
     _lockscreenWidget->hide();
 }
 
 void MainWindow::hideAll() {
     _sideBarWidget->hide();
     _topBarWidget->hide();
-    _centerPasswordList->hide();
     _LabelLogo->hide();
+
     _lockscreenWidget->hide();
+
+    _centerPasswordList->hide();
+    _centerPasswordGen->hide();
+}
+
+void MainWindow::showBars() {
+    _sideBarWidget->show();
+    _topBarWidget->show();
+    _LabelLogo->show();
 }
 
 ///////////////////
@@ -227,32 +274,53 @@ void MainWindow::populateGrid() {
     QFont font("Arial", 12);
     int row = 0;
 
-    QLabel *headerWebsite = new QLabel("Website");
-    QLabel *headerUsername = new QLabel("Username/Email");
-    QLabel *headerPassword = new QLabel("Password");
+    // Header erstellen
+    QLineEdit *headerWebsite = new QLineEdit("Website");
+    QLineEdit *headerUsername = new QLineEdit("Username/Email");
+    QLineEdit *headerPassword = new QLineEdit("Password");
+    QLineEdit *headerRowNum = new QLineEdit("Row");
 
-    headerWebsite->setFont(font);
-    headerUsername->setFont(font);
-    headerPassword->setFont(font);
+    headerRowNum->setFixedWidth(40);
 
-    _gridLayout->addWidget(headerWebsite, row, 0);
-    _gridLayout->addWidget(headerUsername, row, 1);
-    _gridLayout->addWidget(headerPassword, row, 2);
+    // Aussehen und Verhalten der Header einstellen
+    auto configureLineEditAsLabel = [](QLineEdit* lineEdit, QFont font) {
+        lineEdit->setReadOnly(true);
+        lineEdit->setFrame(false);
+        lineEdit->setAlignment(Qt::AlignCenter);
+        lineEdit->setFont(font);
+        lineEdit->setFixedHeight(30);
+        lineEdit->setStyleSheet("QLineEdit { background: transparent; border: none; }");
+    };
+
+    configureLineEditAsLabel(headerRowNum, font);
+    configureLineEditAsLabel(headerWebsite, font);
+    configureLineEditAsLabel(headerUsername, font);
+    configureLineEditAsLabel(headerPassword, font);
+
+    _gridLayout->addWidget(headerRowNum, row, 0);
+    _gridLayout->addWidget(headerWebsite, row, 1);
+    _gridLayout->addWidget(headerUsername, row, 2);
+    _gridLayout->addWidget(headerPassword, row, 3);
 
     for (int i = 0; i < _passwordList.size(); ++i) {
-        row++;
+        ++row;
         if (_passwordList[i].size() == 3) {
-            QLabel *websiteLabel = new QLabel(_passwordList[i][0]);
-            QLabel *usernameLabel = new QLabel(_passwordList[i][1]);
-            QLabel *passwordLabel = new QLabel(_passwordList[i][2]);
+            QLineEdit *RowNum = new QLineEdit(QString::number(row));
+            QLineEdit *websiteLabel = new QLineEdit(_passwordList[i][0]);
+            QLineEdit *usernameLabel = new QLineEdit(_passwordList[i][1]);
+            QLineEdit *passwordLabel = new QLineEdit(_passwordList[i][2]);
 
-            websiteLabel->setFont(font);
-            usernameLabel->setFont(font);
-            passwordLabel->setFont(font);
+            RowNum->setFixedSize(40,15);
 
-            _gridLayout->addWidget(websiteLabel, row, 0);
-            _gridLayout->addWidget(usernameLabel, row, 1);
-            _gridLayout->addWidget(passwordLabel, row, 2);
+            configureLineEditAsLabel(RowNum, font);
+            configureLineEditAsLabel(websiteLabel, font);
+            configureLineEditAsLabel(usernameLabel, font);
+            configureLineEditAsLabel(passwordLabel, font);
+
+            _gridLayout->addWidget(RowNum, row, 0);
+            _gridLayout->addWidget(websiteLabel, row, 1);
+            _gridLayout->addWidget(usernameLabel, row, 2);
+            _gridLayout->addWidget(passwordLabel, row, 3);
         } else {
             qDebug() << "Warnung: Unvollständiger Datensatz in _passwordList an Index" << i;
         }
@@ -304,6 +372,30 @@ void MainWindow::checkPassword() {
                 QMessageBox::warning(this, "Wrong Password", "The entered password is incorrect. " + QString::number(attemptsRemaining) + " attempt(s) remaining.");
             }
         }
+    }
+}
+
+void MainWindow::updateAllowedCharacters() {
+    QVector<QString> allowedCharsVec;
+
+    if (_allowLowAlphabetChecked) {
+        allowedCharsVec.push_back("abcdefghijklmnopqrstuvwxyz");
+    }
+
+    if (_allowUpAlphabetChecked) {
+        allowedCharsVec.push_back("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    }
+
+    if (_allowNumbersChecked) {
+        allowedCharsVec.push_back("0123456789");
+    }
+
+    if (_allowSymbolsChecked) {
+        allowedCharsVec.push_back("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
+    }
+
+    for (QString str : allowedCharsVec) {
+        _allowedCharsPasswordGen += str;
     }
 }
 
@@ -393,7 +485,10 @@ void MainWindow::setupSidebar() {
     _sideBarWidget->setLayout(_sideBarLayout);
     _sideBarWidget->setGeometry(spacingSide, logoHeight, logoWidth, _screenHeight - logoHeight);
 
+    connect(_ButtonShowPasswordGen, SIGNAL(clicked()), this, SLOT(showPasswordGen()));
     connect(_ButtonOpenLockscreen, SIGNAL(clicked()), this, SLOT(lockScreen()));
+    connect(_ButtonShowPasswords, SIGNAL(clicked()), this, SLOT(showPasswords()));
+
 
     _sideBarWidget->hide();
     _LabelLogo->hide();
@@ -446,22 +541,110 @@ void MainWindow::setupCenterPasswordList() {
     _centerPasswordList->hide();
 }
 
-void setupPasswordGen() {
+void MainWindow::setupPasswordGen() {
+    _allowLowAlphabet = new QCheckBox("Include Lowercase Alphabet (a-z)");
+    _allowUpAlphabet = new QCheckBox("Include Uppercase Alphabet (A-Z)");
+    _allowNumbers = new QCheckBox("Include Numbers (0-9)");
+    _allowSymbols = new QCheckBox("Include Symbols");
+
+    connect(_allowLowAlphabet, &QCheckBox::toggled, this, &MainWindow::onAllowLowAlphabetToggled);
+    connect(_allowUpAlphabet, &QCheckBox::toggled, this, &MainWindow::onAllowUpAlphabetToggled);
+    connect(_allowNumbers, &QCheckBox::toggled, this, &MainWindow::onAllowNumbersToggled);
+    connect(_allowSymbols, &QCheckBox::toggled, this, &MainWindow::onAllowSymbolsToggled);
+
+    _allowLowAlphabetChecked = true;
+    _allowUpAlphabetChecked = true;
+    _allowNumbersChecked = true;
+    _allowSymbolsChecked = true;
+
+    _centerPasswordGen = new QWidget(this);
+    QVBoxLayout *genLayout = new QVBoxLayout(_centerPasswordGen);
+    genLayout->setSpacing(10);
+    genLayout->setContentsMargins(20, 20, 20, 20);
+
+    QGroupBox *optionsGroup = new QGroupBox("Password Generation Options", this);
+    QVBoxLayout *optionsLayout = new QVBoxLayout(optionsGroup);
+
+    _showLowAlphabet = new QLabel("Include Lowercase Alphabet (a-z):", this);
+    _allowLowAlphabet = new QCheckBox(this);
+    _allowLowAlphabet->setChecked(true);
+    optionsLayout->addWidget(_showLowAlphabet);
+    optionsLayout->addWidget(_allowLowAlphabet);
+
+    _showUpAlphabet = new QLabel("Include Uppercase Alphabet (A-Z):", this);
+    _allowUpAlphabet = new QCheckBox(this);
+    _allowUpAlphabet->setChecked(true);
+    optionsLayout->addWidget(_showUpAlphabet);
+    optionsLayout->addWidget(_allowUpAlphabet);
+
+    _showNumbers = new QLabel("Include Numbers (0-9):", this);
+    _allowNumbers = new QCheckBox(this);
+    _allowNumbers->setChecked(true);
+    optionsLayout->addWidget(_showNumbers);
+    optionsLayout->addWidget(_allowNumbers);
+
+    QLabel *showSymbols = new QLabel("Include Symbols:", this);
+    _allowSymbols = new QCheckBox(this);
+    _allowSymbols->setChecked(true);
+    optionsLayout->addWidget(showSymbols);
+    optionsLayout->addWidget(_allowSymbols);
+
+    QLabel *allowedSymbolsLabel = new QLabel("Allowed Symbols:", this);
+    _showAllowedSymbols = new QLineEdit(this);
+    _showAllowedSymbols->setPlaceholderText("Enter your symbols");
+    _showAllowedSymbols->setText("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
+    optionsLayout->addWidget(allowedSymbolsLabel);
+    optionsLayout->addWidget(_showAllowedSymbols);
+
+    QLabel *passwordLengthLabel = new QLabel("Password Length:", this);
+    _passwordLengthInput = new QLineEdit(this);
+    _passwordLengthInput->setPlaceholderText("Enter password length (1-20)");
+    _passwordLengthInput->setText("16");
+    _passwordLengthInput->setValidator(new QIntValidator(1, 20, this));
+    optionsLayout->addWidget(passwordLengthLabel);
+    optionsLayout->addWidget(_passwordLengthInput);
+
+    optionsGroup->setLayout(optionsLayout);
+    genLayout->addWidget(optionsGroup);
+
+    QGroupBox *outputGroup = new QGroupBox("Generated Password", this);
+    QVBoxLayout *outputLayout = new QVBoxLayout(outputGroup);
+
+    _passwordOutput = new QLineEdit(this);
+    _passwordOutput->setReadOnly(true);
+    _passwordOutput->setStyleSheet("background-color: #252526; color: #ffffff;");
+    _passwordOutput->setAlignment(Qt::AlignCenter);
+    _passwordOutput->setFixedHeight(30);
+    outputLayout->addWidget(_passwordOutput);
+
+    _startPasswordGen = new QPushButton("Generate Password", this);
+    _startPasswordGen->setFixedHeight(40);
+    outputLayout->addWidget(_startPasswordGen);
+
+    outputGroup->setLayout(outputLayout);
+    genLayout->addWidget(outputGroup);
+
+    _centerPasswordGen->setLayout(genLayout);
+    _centerPasswordGen->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
+    _centerPasswordGen->hide();
+
+    bool ok = false;
+    int passwordLenght = _passwordLengthInput->text().toInt(&ok);
+    connect(_startPasswordGen, &QPushButton::clicked, this, &MainWindow::startPasswordGen);
+}
+
+void MainWindow::setupPasswordEdit() {
 
 }
 
-void setupPasswordEdit() {
+void MainWindow::setupPasswordDel() {
 
 }
 
-void setupPasswordDel() {
+void MainWindow::setupAddPassword() {
 
 }
 
-void setupAddPassword() {
-
-}
-
-void setupEditMaster() {
+void MainWindow::setupEditMaster() {
 
 }

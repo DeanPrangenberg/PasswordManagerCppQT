@@ -187,7 +187,9 @@ S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/KW
   C:/Qt/6.6.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.6.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QApplication \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/QCheckBox \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QGridLayout \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/QGroupBox \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLineEdit \
@@ -206,9 +208,11 @@ S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/KW
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qapplication.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/qcheckbox.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.6.1/mingw_64/include/QtWidgets/qgroupbox.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlayoutitem.h \
