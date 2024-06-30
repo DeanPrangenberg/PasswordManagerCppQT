@@ -654,9 +654,5 @@ PasswordManagerCppQT_autogen/timestamp: \
   CMakeFiles/3.28.1/CMakeSystem.cmake \
   PasswordManagerCppQT_autogen/moc_predefs.h \
   S:/GitHub/PasswordManagerCppQT/main.cpp \
-  S:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.cpp \
-  S:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.h \
   S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp \
-  S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h \
-  S:/GitHub/PasswordManagerCppQT/src/global/Global.cpp \
-  S:/GitHub/PasswordManagerCppQT/src/global/Global.h
+  S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h

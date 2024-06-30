@@ -15,10 +15,6 @@ find_package(Qt6 COMPONENTS
         REQUIRED)
 
 add_executable(PasswordManagerCppQT main.cpp
-        src/Lockscreen/Lockscreen.cpp
-        src/Lockscreen/Lockscreen.h
-        src/global/Global.cpp
-        src/global/Global.h
         src/MainWindow/MainWindow.cpp
         src/MainWindow/MainWindow.h)
 target_link_libraries(PasswordManagerCppQT

@@ -37,54 +37,80 @@ private slots:
     void editPassword();
     void ChangeMasterPassword();
     void lockScreen();
+    void ConfirmPassword();
 
 private:
-    // Sidebar
-    QWidget *_sidebarWidget;
-    QVBoxLayout *_sidebarLayout;
-    QLabel *_LabelLogo;
-    QPushButton *_ButtonShowPasswords;
-    QPushButton *_ButtonShowPasswordGen;
-    QPushButton *_ButtonAddEntry;
-    QPushButton *_ButtonOpenLockscreen;
-    QPushButton *_ButtonChangeMasterPassword;
-    QPushButton *_ButtonDelPassword;
-    QPushButton *_ButtonEditPassword;
+    // Lockscreen
+    QWidget *_lockscreenWidget{};
+    QLayout *_lockscreenLayout{};
+    QPushButton *_buttonConfirm{};
+    QLineEdit *_inputField{};
+    QString _passwordUserIn;
 
-    // Topbar
-    QHBoxLayout *_topBarLayout;
-    QWidget *_topBarWidget;
-    QPushButton *_ButtonStartSearch;
-    QPushButton *_ButtonChangeSort;
-    QLineEdit *_inputSearch;
+    // Sidebar widgets
+    QWidget *_sideBarWidget{};
+    QVBoxLayout *_sideBarLayout{};
+    QLabel *_LabelLogo{};
+    QPushButton *_ButtonShowPasswords{};
+    QPushButton *_ButtonShowPasswordGen{};
+    QPushButton *_ButtonAddEntry{};
+    QPushButton *_ButtonOpenLockscreen{};
+    QPushButton *_ButtonChangeMasterPassword{};
+    QPushButton *_ButtonDelPassword{};
+    QPushButton *_ButtonEditPassword{};
 
-    // Center Widget
-    QWidget *_centerPasswordList;
-    QScrollArea *_scrollArea;
-    QGridLayout *_gridLayout;
+    // Top bar widgets
+    QHBoxLayout *_topBarLayout{};
+    QWidget *_topBarWidget{};
+    QPushButton *_ButtonStartSearch{};
+    QPushButton *_ButtonChangeSort{};
+    QLineEdit *_inputSearch{};
 
-    // Data
+    // Center password list widgets
+    QWidget *_centerPasswordList{};
+    QScrollArea *_scrollArea{};
+    QGridLayout *_gridLayout{};
+
+    // Data storage
     QVector<QVector<QString>> _passwordList;
 
-    // Helper functions
+    // UI setup
     void setupSidebar();
     void setupTopbar();
     void setupCenterPasswordList();
+    void setupLockscreen();
+    void setupPasswordGen();
+    void setupPasswordEdit();
+    void setupPasswordDel();
+    void setupAddPassword();
+    void setupEditMaster();
+
+    // on/off Ui
+    void hideAll();
+    void showStdMenu();
+
+    // data handling
+    void checkPassword();
+    QString genPassword(int length, QString allowedChars);
+    void encryptPasswords();
+    QString genKey();
+    QString encryptString(const QString &input, const QString &key);
+    void decryptPasswords();
+    QString decryptString(const QString &input, const QString &key);
+    void fillPasswords();
     void populateGrid();
 
-    void readPasswordFromFile();
-    void writePasswordsInFile();
-
-    void copySelectedText(QListWidgetItem *item);
-
+    // Constants
     const QString allChars = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    QString genKey();
-    QString genPassword(int length, QString allowedChars);
-    QString decryptString(const QString &input, const QString &key);
-    QString encryptString(const QString &input, const QString &key);
+    const int _screenHeight = 650; //norm 650
+    const int _screenWidth = 1050; //norm 1050
+    const int _middleWidthScreen = _screenWidth / 2;
+    const int _middleHeightScreen = _screenHeight / 2;
 
-    void encryptPasswords();
-    void decryptPasswords();
+    // Global var
+    QString _masterPassword;
+
+
 };
 
 #endif // PASSWORDMANAGERCPPQT_MAINWINDOW_H

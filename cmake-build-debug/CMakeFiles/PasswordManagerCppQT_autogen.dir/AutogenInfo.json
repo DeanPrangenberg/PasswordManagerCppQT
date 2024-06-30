@@ -221,21 +221,9 @@
 	"HEADERS" : 
 	[
 		[
-			"S:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.h",
-			"MU",
-			"2MGCKYRAPB/moc_Lockscreen.cpp",
-			null
-		],
-		[
 			"S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h",
 			"MU",
 			"KWHCXE3JJ5/moc_MainWindow.cpp",
-			null
-		],
-		[
-			"S:/GitHub/PasswordManagerCppQT/src/global/Global.h",
-			"MU",
-			"GEFW56ZVJV/moc_Global.cpp",
 			null
 		]
 	],
@@ -310,16 +298,10 @@
 	[
 		[ "S:/GitHub/PasswordManagerCppQT/main.cpp", "MU", null ],
 		[
-			"S:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.cpp",
-			"MU",
-			null
-		],
-		[
 			"S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp",
 			"MU",
 			null
-		],
-		[ "S:/GitHub/PasswordManagerCppQT/src/global/Global.cpp", "MU", null ]
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

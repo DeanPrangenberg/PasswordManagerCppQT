@@ -65,22 +65,6 @@ build CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: CXX_COMPILER__PasswordMa
   OBJECT_DIR = CMakeFiles\PasswordManagerCppQT.dir
   OBJECT_FILE_DIR = CMakeFiles\PasswordManagerCppQT.dir
 
-build CMakeFiles/PasswordManagerCppQT.dir/src/Lockscreen/Lockscreen.cpp.obj: CXX_COMPILER__PasswordManagerCppQT_unscanned_Debug S$:/GitHub/PasswordManagerCppQT/src/Lockscreen/Lockscreen.cpp || cmake_object_order_depends_target_PasswordManagerCppQT
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\PasswordManagerCppQT.dir\src\Lockscreen\Lockscreen.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/include -isystem C:/Qt/6.6.1/mingw_64/include/QtCore -isystem C:/Qt/6.6.1/mingw_64/include -isystem C:/Qt/6.6.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.6.1/mingw_64/include/QtGui -isystem C:/Qt/6.6.1/mingw_64/include/QtWidgets
-  OBJECT_DIR = CMakeFiles\PasswordManagerCppQT.dir
-  OBJECT_FILE_DIR = CMakeFiles\PasswordManagerCppQT.dir\src\Lockscreen
-
-build CMakeFiles/PasswordManagerCppQT.dir/src/global/Global.cpp.obj: CXX_COMPILER__PasswordManagerCppQT_unscanned_Debug S$:/GitHub/PasswordManagerCppQT/src/global/Global.cpp || cmake_object_order_depends_target_PasswordManagerCppQT
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\PasswordManagerCppQT.dir\src\global\Global.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem S:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/include -isystem C:/Qt/6.6.1/mingw_64/include/QtCore -isystem C:/Qt/6.6.1/mingw_64/include -isystem C:/Qt/6.6.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.6.1/mingw_64/include/QtGui -isystem C:/Qt/6.6.1/mingw_64/include/QtWidgets
-  OBJECT_DIR = CMakeFiles\PasswordManagerCppQT.dir
-  OBJECT_FILE_DIR = CMakeFiles\PasswordManagerCppQT.dir\src\global
-
 build CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: CXX_COMPILER__PasswordManagerCppQT_unscanned_Debug S$:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp || cmake_object_order_depends_target_PasswordManagerCppQT
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.obj.d
@@ -97,7 +81,7 @@ build CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: CXX
 #############################################
 # Link the executable PasswordManagerCppQT.exe
 
-build PasswordManagerCppQT.exe: CXX_EXECUTABLE_LINKER__PasswordManagerCppQT_Debug CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/src/Lockscreen/Lockscreen.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/src/global/Global.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj | C$:/Qt/6.6.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.6.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.6.1/mingw_64/lib/libQt6Core.a || PasswordManagerCppQT_autogen PasswordManagerCppQT_autogen_timestamp_deps
+build PasswordManagerCppQT.exe: CXX_EXECUTABLE_LINKER__PasswordManagerCppQT_Debug CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj | C$:/Qt/6.6.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.6.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.6.1/mingw_64/lib/libQt6Core.a || PasswordManagerCppQT_autogen PasswordManagerCppQT_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = C:/Qt/6.6.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.6.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.6.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PasswordManagerCppQT.dir
