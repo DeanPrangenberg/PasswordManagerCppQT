@@ -23,6 +23,7 @@
 #include <QGridLayout>
 #include <QCheckBox>
 #include <QGroupBox>
+#include <QInputDialog>
 
 class MainWindow : public QMainWindow {
 Q_OBJECT
@@ -35,9 +36,10 @@ private slots:
     void newEntry();
     void showPasswords();
     void showPasswordGen();
+    void showMasterPasswordEdit();
     void delPassword();
     void editPassword();
-    void ChangeMasterPassword();
+    void checkChangeMasterPassword();
     void lockScreen();
     void ConfirmPassword();
     void onAllowLowAlphabetToggled(bool checked);
@@ -65,6 +67,7 @@ private:
 
     // data handling
     void populateGrid();
+    void checkIfFirstStart();
     void checkPassword();
     void fillPasswords();
     void encryptPasswords();
@@ -123,6 +126,14 @@ private:
     bool _allowUpAlphabetChecked;
     bool _allowNumbersChecked;
     bool _allowSymbolsChecked;
+
+    // center Master Password editor
+    QWidget *_centerMasterPasswordEdit;
+    QLineEdit *_inputOldMasterPassword;
+    QLineEdit *_inputNewMasterPassword;
+    QLabel *_oldMasterPasswordLabel;
+    QLabel *_newMasterPasswordLabel;
+    QPushButton *_changeMasterPassword;
 
     // Data storage
     QVector<QVector<QString>> _passwordList;

@@ -195,6 +195,7 @@ CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilatio
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
@@ -217,6 +218,7 @@ CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilatio
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
@@ -689,6 +691,7 @@ CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: C:/GitHub/PasswordManagerCppQT
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
@@ -711,6 +714,7 @@ CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: C:/GitHub/PasswordManagerCppQT
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
@@ -1183,6 +1187,7 @@ CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: C:/GitHub
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
@@ -1205,6 +1210,7 @@ CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: C:/GitHub
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h \
+  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
@@ -2056,6 +2062,10 @@ C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32
 
 C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox:
 
+C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc:
+
+C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog:
+
 PasswordManagerCppQT_autogen/KWHCXE3JJ5/moc_MainWindow.cpp:
 
 C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel:
@@ -2101,6 +2111,8 @@ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qboxlayout.h:
 C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h:
 
 C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h:
+
+C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h:
 
 C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h:
 
@@ -2309,8 +2321,6 @@ C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/gamma.tcc:
 
 C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf_iterator.h:
-
-C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc:
 
 C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h:
 

@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     */
 
     // get passwords from file
+    checkIfFirstStart();
     decryptPasswords();
 
     // setup all widgets
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setupTopbar();
     setupCenterPasswordList();
     setupPasswordGen();
+    setupEditMaster();
 }
 
 ///////////
@@ -56,15 +58,15 @@ void MainWindow::showPasswords() {
 }
 
 void MainWindow::showPasswordGen() {
-    qDebug() << "Entering showPasswordGen function";
     hideAll();
     showBars();
-    if (!_centerPasswordGen) {
-        qDebug() << "Center Password Generator Widget is null";
-    } else {
-        qDebug() << "Showing Center Password Generator Widget";
-        _centerPasswordGen->show();
-    }
+    _centerPasswordGen->show();
+}
+
+void MainWindow::showMasterPasswordEdit() {
+    hideAll();
+    showBars();
+    _centerMasterPasswordEdit->show();
 }
 
 void MainWindow::delPassword() {
@@ -75,8 +77,18 @@ void MainWindow::editPassword() {
     // Implement edit password logic hier
 }
 
-void MainWindow::ChangeMasterPassword() {
-    // Implement change master password logic hier
+void MainWindow::checkChangeMasterPassword() {
+    if (_inputOldMasterPassword->text() == _masterPassword) {
+        _masterPassword = _inputNewMasterPassword->text();
+        QMessageBox::information(this, "Master Password", "Das Master Password wurde auf " + _masterPassword + " geändert!");
+        qDebug() << "== Das neue Masterpassword ist: " << _masterPassword;
+    } else {
+        qDebug() << "Old Master password input: " << _oldMasterPasswordLabel;
+        qDebug() << "Real Master password: " << _masterPassword;
+        QMessageBox::warning(this, "Fehler", "Das aktuelle Master-Passwort ist nicht korrekt.");
+        _inputOldMasterPassword->clear();
+    }
+    encryptPasswords();
 }
 
 void MainWindow::onAllowLowAlphabetToggled(bool checked) {
@@ -128,6 +140,7 @@ void MainWindow::hideAll() {
 
     _centerPasswordList->hide();
     _centerPasswordGen->hide();
+    _centerMasterPasswordEdit->hide();
 }
 
 void MainWindow::showBars() {
@@ -188,10 +201,9 @@ void MainWindow::encryptPasswords() {
     QTextStream out(&file);
 
     QString key = genKey();
-    QString masterPassword = "gg";
 
     out << key << "\n";
-    out << encryptString(masterPassword, key) << "\n";
+    out << encryptString(_masterPassword, key) << "\n";
 
     for (const QVector<QString>& tempVec : _passwordList) {
         for (const QString& str : tempVec) {
@@ -211,6 +223,7 @@ void MainWindow::decryptPasswords() {
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Fehler beim Öffnen der Datei zum Lesen:" << file.errorString();
+        QMessageBox::warning(this, "Fehler", "Die Passwortdatei konnte nicht geöffnet werden.");
         return;
     }
 
@@ -218,7 +231,20 @@ void MainWindow::decryptPasswords() {
     _passwordList.clear();
 
     QString key = in.readLine().trimmed();
+    if (key.isEmpty()) {
+        qDebug() << "Fehler: Der Entschlüsselungsschlüssel ist leer.";
+        QMessageBox::warning(this, "Fehler", "Die Passwortdatei ist ungültig oder beschädigt.");
+        file.close();
+        return;
+    }
+
     _masterPassword = decryptString(in.readLine().trimmed(), key);
+    if (_masterPassword.isEmpty()) {
+        qDebug() << "Fehler: Das Master-Passwort konnte nicht entschlüsselt werden.";
+        QMessageBox::warning(this, "Fehler", "Das Master-Passwort konnte nicht entschlüsselt werden.");
+        file.close();
+        return;
+    }
 
     QVector<QString> tempVec;
     while (!in.atEnd()) {
@@ -238,8 +264,46 @@ void MainWindow::decryptPasswords() {
     }
 
     file.close();
+    qDebug() << "Strings wurden erfolgreich aus" << filePath << "gelesen und entschlüsselt.";
+}
 
-    qDebug() << "Strings wurden erfolgreich aus" << filePath << "gelesen und entschluesselt.";
+void MainWindow::checkIfFirstStart() {
+    QString filePath = "../res/passwords.txt";
+    QFile file(filePath);
+    if (!QFile::exists(filePath)) {
+        qDebug() << "Datei nicht gefunden:" << filePath;
+        QMessageBox::information(this, "Initialisierung", "Die Passwortdatei wurde nicht gefunden. Bitte geben Sie ein Master-Passwort ein, um die Datei zu erstellen.");
+
+        bool ok;
+        QString masterPassword = QInputDialog::getText(this, tr("Initialisiere Master-Passwort"),
+                                                       tr("Master-Passwort:"), QLineEdit::Password,
+                                                       "", &ok);
+
+        if (ok && !masterPassword.isEmpty()) {
+            // Save the master password and create an empty password file
+            _masterPassword = masterPassword;
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                qDebug() << "Fehler beim Öffnen der Datei zum Schreiben:" << file.errorString();
+                QMessageBox::warning(this, "Fehler", "Die Passwortdatei konnte nicht erstellt werden.");
+                return;
+            }
+            QTextStream out(&file);
+            QString key = genKey();
+            out << key << "\n";
+            out << encryptString(_masterPassword, key) << "\n";
+            file.close();
+            qDebug() << "Neue Passwortdatei wurde erstellt.";
+            QMessageBox::information(this, "Erfolg", "Das Master-Passwort wurde gesetzt und die Passwortdatei wurde erstellt.");
+            fillPasswords();
+            decryptPasswords();
+            return;
+        } else {
+            qDebug() << "Initialisierung des Master-Passworts abgebrochen.";
+            QMessageBox::warning(this, "Fehler", "Initialisierung des Master-Passworts abgebrochen.");
+            return;
+        }
+        return;
+    }
 }
 
 QString MainWindow::encryptString(const QString& input, const QString& key) {
@@ -356,6 +420,7 @@ void MainWindow::fillPasswords() {
     }
 
     _passwordList = tempVec;
+    encryptPasswords();
 }
 
 void MainWindow::checkPassword() {
@@ -492,6 +557,7 @@ void MainWindow::setupSidebar() {
     connect(_ButtonShowPasswordGen, SIGNAL(clicked()), this, SLOT(showPasswordGen()));
     connect(_ButtonOpenLockscreen, SIGNAL(clicked()), this, SLOT(lockScreen()));
     connect(_ButtonShowPasswords, SIGNAL(clicked()), this, SLOT(showPasswords()));
+    connect(_ButtonChangeMasterPassword, SIGNAL(clicked()), this, SLOT(showMasterPasswordEdit()));
 
 
     _sideBarWidget->hide();
@@ -648,5 +714,34 @@ void MainWindow::setupAddPassword() {
 }
 
 void MainWindow::setupEditMaster() {
+    _centerMasterPasswordEdit = new QWidget(this);
+    QVBoxLayout *editLayout = new QVBoxLayout(_centerMasterPasswordEdit);
+    editLayout->setSpacing(10);
+    editLayout->setContentsMargins(20, 20, 20, 20);
 
+    QGroupBox *editGroup = new QGroupBox("Edit Master Password", this);
+    QVBoxLayout *groupLayout = new QVBoxLayout(editGroup);
+
+    _oldMasterPasswordLabel = new QLabel("Old Master Password:", this);
+    _inputOldMasterPassword = new QLineEdit(this);
+
+    _newMasterPasswordLabel = new QLabel("New Master Password:", this);
+    _inputNewMasterPassword = new QLineEdit(this);
+
+    groupLayout->addWidget(_oldMasterPasswordLabel);
+    groupLayout->addWidget(_inputOldMasterPassword);
+    groupLayout->addWidget(_newMasterPasswordLabel);
+    groupLayout->addWidget(_inputNewMasterPassword);
+
+    _changeMasterPassword = new QPushButton("Change Master Password", this);
+    groupLayout->addWidget(_changeMasterPassword);
+
+    editGroup->setLayout(groupLayout);
+    editLayout->addWidget(editGroup);
+
+    _centerMasterPasswordEdit->setLayout(editLayout);
+    _centerMasterPasswordEdit->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
+    _centerMasterPasswordEdit->hide();
+
+    connect(_changeMasterPassword, SIGNAL(clicked()), this, SLOT(checkChangeMasterPassword()));
 }

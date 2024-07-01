@@ -501,4 +501,7 @@ CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QCheckBox \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qcheckbox.h \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox \
- C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlineedit.h

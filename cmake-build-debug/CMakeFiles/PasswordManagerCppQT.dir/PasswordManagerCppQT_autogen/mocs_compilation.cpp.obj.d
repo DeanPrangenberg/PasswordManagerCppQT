@@ -503,4 +503,7 @@ CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilatio
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qcheckbox.h \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h \
+ C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlineedit.h \
  C:/Qt/6.6.0/mingw_64/include/QtCore/qtmochelpers.h

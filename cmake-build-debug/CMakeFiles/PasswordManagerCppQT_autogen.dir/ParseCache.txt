@@ -194,6 +194,7 @@ C:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGridLayout
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QGroupBox
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout
+ mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QInputDialog
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget
@@ -216,6 +217,7 @@ C:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgroupbox.h
+ mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qinputdialog.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h
