@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PasswordManagerCppQT::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PasswordManagerCppQT-Debug-24a6729c33d6ca859c58.json",
+					"jsonFile" : "target-PasswordManagerCppQT-Debug-6debe710a83e4010fc91.json",
 					"name" : "PasswordManagerCppQT",
 					"projectIndex" : 0
 				},
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "S:/GitHub/PasswordManagerCppQT/cmake-build-debug",
-		"source" : "S:/GitHub/PasswordManagerCppQT"
+		"build" : "C:/GitHub/PasswordManagerCppQT/cmake-build-debug",
+		"source" : "C:/GitHub/PasswordManagerCppQT"
 	},
 	"version" : 
 	{

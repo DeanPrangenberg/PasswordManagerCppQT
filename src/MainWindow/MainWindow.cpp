@@ -2,6 +2,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     this->setGeometry(50, 50, _screenWidth, _screenHeight);
+    this->setFixedSize(_screenWidth, _screenHeight);
     /*
     fillPasswords();
     encryptPasswords();
@@ -36,6 +37,7 @@ void MainWindow::lockScreen() {
     hideAll();
     _lockscreenWidget->show();
     _inputField->clear();
+    encryptPasswords();
 }
 
 void MainWindow::changeSort() {
@@ -110,9 +112,11 @@ void MainWindow::startPasswordGen() {
 ///////////////
 
 void MainWindow::showStdMenu() {
+    hideAll();
     showBars();
     _centerPasswordList->show();
-    _lockscreenWidget->hide();
+    decryptPasswords();
+    populateGrid();
 }
 
 void MainWindow::hideAll() {
@@ -522,8 +526,6 @@ void MainWindow::setupCenterPasswordList() {
     _centerPasswordList = new QWidget(this);
     _scrollArea = new QScrollArea(this);
     _gridLayout = new QGridLayout();
-
-    populateGrid();
 
     QWidget *scrollWidget = new QWidget();
     scrollWidget->setLayout(_gridLayout);
