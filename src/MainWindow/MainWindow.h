@@ -37,6 +37,7 @@ private slots:
     void showPasswords();
     void showPasswordGen();
     void showMasterPasswordEdit();
+    void showPasswordDel();
     void delPassword();
     void showEditPassword();
     void checkChangeMasterPassword();
@@ -47,7 +48,8 @@ private slots:
     void onAllowNumbersToggled(bool checked);
     void onAllowSymbolsToggled(bool checked);
     void startPasswordGen();
-    void searchRow();
+    void searchRowEdit();
+    void searchRowDel();
     void transferValues();
     void changePasswordEntry();
 
@@ -140,7 +142,7 @@ private:
 
     // center normal Password editor
     QWidget *_centerNormPasswordEdit;
-    QLineEdit *_inputRow;
+    QLineEdit *_inputRowEdit;
     QLineEdit *_inputNewName;
     QLineEdit *_inputNewUsername;
     QLineEdit *_inputNewPassword;
@@ -152,6 +154,15 @@ private:
     QLabel *_showNewUsername;
     QLabel *_showNewPassword;
     QPushButton *_saveChangesNormPasswordEdit;
+
+    // center delete password
+    QWidget *_centerPasswordDel;
+    QLineEdit *_inputRowDel;
+    QLabel *_showOldNameDel;
+    QLabel *_showOldUsernameDel;
+    QLabel *_showOldPasswordDel;
+
+
 
     // Data storage
     QVector<QVector<QString>> _passwordList;

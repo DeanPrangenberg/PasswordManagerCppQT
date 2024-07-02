@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MainWindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.6.0)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.6.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -22,7 +22,7 @@ QT_BEGIN_MOC_NAMESPACE
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'MainWindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.6.0. It"
+#error "This file was generated using the moc from 6.6.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -46,6 +46,7 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "showPasswords",
     "showPasswordGen",
     "showMasterPasswordEdit",
+    "showPasswordDel",
     "delPassword",
     "showEditPassword",
     "checkChangeMasterPassword",
@@ -57,13 +58,14 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "onAllowNumbersToggled",
     "onAllowSymbolsToggled",
     "startPasswordGen",
-    "searchRow",
+    "searchRowEdit",
+    "searchRowDel",
     "transferValues",
     "changePasswordEntry"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[42];
+    uint offsetsAndSizes[46];
     char stringdata0[11];
     char stringdata1[11];
     char stringdata2[1];
@@ -71,20 +73,22 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata4[14];
     char stringdata5[16];
     char stringdata6[23];
-    char stringdata7[12];
-    char stringdata8[17];
-    char stringdata9[26];
-    char stringdata10[11];
-    char stringdata11[16];
-    char stringdata12[26];
-    char stringdata13[8];
-    char stringdata14[25];
-    char stringdata15[22];
+    char stringdata7[16];
+    char stringdata8[12];
+    char stringdata9[17];
+    char stringdata10[26];
+    char stringdata11[11];
+    char stringdata12[16];
+    char stringdata13[26];
+    char stringdata14[8];
+    char stringdata15[25];
     char stringdata16[22];
-    char stringdata17[17];
-    char stringdata18[10];
-    char stringdata19[15];
-    char stringdata20[20];
+    char stringdata17[22];
+    char stringdata18[17];
+    char stringdata19[14];
+    char stringdata20[13];
+    char stringdata21[15];
+    char stringdata22[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -97,20 +101,22 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(32, 13),  // "showPasswords"
         QT_MOC_LITERAL(46, 15),  // "showPasswordGen"
         QT_MOC_LITERAL(62, 22),  // "showMasterPasswordEdit"
-        QT_MOC_LITERAL(85, 11),  // "delPassword"
-        QT_MOC_LITERAL(97, 16),  // "showEditPassword"
-        QT_MOC_LITERAL(114, 25),  // "checkChangeMasterPassword"
-        QT_MOC_LITERAL(140, 10),  // "lockScreen"
-        QT_MOC_LITERAL(151, 15),  // "ConfirmPassword"
-        QT_MOC_LITERAL(167, 25),  // "onAllowLowAlphabetToggled"
-        QT_MOC_LITERAL(193, 7),  // "checked"
-        QT_MOC_LITERAL(201, 24),  // "onAllowUpAlphabetToggled"
-        QT_MOC_LITERAL(226, 21),  // "onAllowNumbersToggled"
-        QT_MOC_LITERAL(248, 21),  // "onAllowSymbolsToggled"
-        QT_MOC_LITERAL(270, 16),  // "startPasswordGen"
-        QT_MOC_LITERAL(287, 9),  // "searchRow"
-        QT_MOC_LITERAL(297, 14),  // "transferValues"
-        QT_MOC_LITERAL(312, 19)   // "changePasswordEntry"
+        QT_MOC_LITERAL(85, 15),  // "showPasswordDel"
+        QT_MOC_LITERAL(101, 11),  // "delPassword"
+        QT_MOC_LITERAL(113, 16),  // "showEditPassword"
+        QT_MOC_LITERAL(130, 25),  // "checkChangeMasterPassword"
+        QT_MOC_LITERAL(156, 10),  // "lockScreen"
+        QT_MOC_LITERAL(167, 15),  // "ConfirmPassword"
+        QT_MOC_LITERAL(183, 25),  // "onAllowLowAlphabetToggled"
+        QT_MOC_LITERAL(209, 7),  // "checked"
+        QT_MOC_LITERAL(217, 24),  // "onAllowUpAlphabetToggled"
+        QT_MOC_LITERAL(242, 21),  // "onAllowNumbersToggled"
+        QT_MOC_LITERAL(264, 21),  // "onAllowSymbolsToggled"
+        QT_MOC_LITERAL(286, 16),  // "startPasswordGen"
+        QT_MOC_LITERAL(303, 13),  // "searchRowEdit"
+        QT_MOC_LITERAL(317, 12),  // "searchRowDel"
+        QT_MOC_LITERAL(330, 14),  // "transferValues"
+        QT_MOC_LITERAL(345, 19)   // "changePasswordEntry"
     },
     "MainWindow",
     "changeSort",
@@ -119,6 +125,7 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "showPasswords",
     "showPasswordGen",
     "showMasterPasswordEdit",
+    "showPasswordDel",
     "delPassword",
     "showEditPassword",
     "checkChangeMasterPassword",
@@ -130,7 +137,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "onAllowNumbersToggled",
     "onAllowSymbolsToggled",
     "startPasswordGen",
-    "searchRow",
+    "searchRowEdit",
+    "searchRowDel",
     "transferValues",
     "changePasswordEntry"
 };
@@ -144,7 +152,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -152,24 +160,26 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  122,    2, 0x08,    1 /* Private */,
-       3,    0,  123,    2, 0x08,    2 /* Private */,
-       4,    0,  124,    2, 0x08,    3 /* Private */,
-       5,    0,  125,    2, 0x08,    4 /* Private */,
-       6,    0,  126,    2, 0x08,    5 /* Private */,
-       7,    0,  127,    2, 0x08,    6 /* Private */,
-       8,    0,  128,    2, 0x08,    7 /* Private */,
-       9,    0,  129,    2, 0x08,    8 /* Private */,
-      10,    0,  130,    2, 0x08,    9 /* Private */,
-      11,    0,  131,    2, 0x08,   10 /* Private */,
-      12,    1,  132,    2, 0x08,   11 /* Private */,
-      14,    1,  135,    2, 0x08,   13 /* Private */,
-      15,    1,  138,    2, 0x08,   15 /* Private */,
-      16,    1,  141,    2, 0x08,   17 /* Private */,
-      17,    0,  144,    2, 0x08,   19 /* Private */,
-      18,    0,  145,    2, 0x08,   20 /* Private */,
-      19,    0,  146,    2, 0x08,   21 /* Private */,
-      20,    0,  147,    2, 0x08,   22 /* Private */,
+       1,    0,  134,    2, 0x08,    1 /* Private */,
+       3,    0,  135,    2, 0x08,    2 /* Private */,
+       4,    0,  136,    2, 0x08,    3 /* Private */,
+       5,    0,  137,    2, 0x08,    4 /* Private */,
+       6,    0,  138,    2, 0x08,    5 /* Private */,
+       7,    0,  139,    2, 0x08,    6 /* Private */,
+       8,    0,  140,    2, 0x08,    7 /* Private */,
+       9,    0,  141,    2, 0x08,    8 /* Private */,
+      10,    0,  142,    2, 0x08,    9 /* Private */,
+      11,    0,  143,    2, 0x08,   10 /* Private */,
+      12,    0,  144,    2, 0x08,   11 /* Private */,
+      13,    1,  145,    2, 0x08,   12 /* Private */,
+      15,    1,  148,    2, 0x08,   14 /* Private */,
+      16,    1,  151,    2, 0x08,   16 /* Private */,
+      17,    1,  154,    2, 0x08,   18 /* Private */,
+      18,    0,  157,    2, 0x08,   20 /* Private */,
+      19,    0,  158,    2, 0x08,   21 /* Private */,
+      20,    0,  159,    2, 0x08,   22 /* Private */,
+      21,    0,  160,    2, 0x08,   23 /* Private */,
+      22,    0,  161,    2, 0x08,   24 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -182,10 +192,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   13,
-    QMetaType::Void, QMetaType::Bool,   13,
-    QMetaType::Void, QMetaType::Bool,   13,
-    QMetaType::Void, QMetaType::Bool,   13,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   14,
+    QMetaType::Void, QMetaType::Bool,   14,
+    QMetaType::Void, QMetaType::Bool,   14,
+    QMetaType::Void, QMetaType::Bool,   14,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -213,6 +225,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'showMasterPasswordEdit'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showPasswordDel'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'delPassword'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'showEditPassword'
@@ -237,7 +251,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method 'startPasswordGen'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'searchRow'
+        // method 'searchRowEdit'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'searchRowDel'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'transferValues'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -258,19 +274,21 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->showPasswords(); break;
         case 3: _t->showPasswordGen(); break;
         case 4: _t->showMasterPasswordEdit(); break;
-        case 5: _t->delPassword(); break;
-        case 6: _t->showEditPassword(); break;
-        case 7: _t->checkChangeMasterPassword(); break;
-        case 8: _t->lockScreen(); break;
-        case 9: _t->ConfirmPassword(); break;
-        case 10: _t->onAllowLowAlphabetToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 11: _t->onAllowUpAlphabetToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 12: _t->onAllowNumbersToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 13: _t->onAllowSymbolsToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 14: _t->startPasswordGen(); break;
-        case 15: _t->searchRow(); break;
-        case 16: _t->transferValues(); break;
-        case 17: _t->changePasswordEntry(); break;
+        case 5: _t->showPasswordDel(); break;
+        case 6: _t->delPassword(); break;
+        case 7: _t->showEditPassword(); break;
+        case 8: _t->checkChangeMasterPassword(); break;
+        case 9: _t->lockScreen(); break;
+        case 10: _t->ConfirmPassword(); break;
+        case 11: _t->onAllowLowAlphabetToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 12: _t->onAllowUpAlphabetToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 13: _t->onAllowNumbersToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 14: _t->onAllowSymbolsToggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 15: _t->startPasswordGen(); break;
+        case 16: _t->searchRowEdit(); break;
+        case 17: _t->searchRowDel(); break;
+        case 18: _t->transferValues(); break;
+        case 19: _t->changePasswordEntry(); break;
         default: ;
         }
     }
@@ -295,13 +313,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 20)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 20;
     }
     return _id;
 }
