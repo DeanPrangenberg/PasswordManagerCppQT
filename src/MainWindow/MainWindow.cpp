@@ -8,9 +8,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     encryptPasswords();
     */
 
+
+
     // get passwords from file
     checkIfFirstStart();
     decryptPasswords();
+    _showPasswordList = _passwordList;
 
     // setup all widgets
     setupLockscreen();
@@ -19,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setupCenterPasswordList();
     setupPasswordGen();
     setupEditMaster();
+    setupAddPassword();
+    setupPasswordDel();
+    setupPasswordEdit();
 }
 
 ///////////
@@ -73,8 +79,10 @@ void MainWindow::delPassword() {
     // Implement delete password logic hier
 }
 
-void MainWindow::editPassword() {
-    // Implement edit password logic hier
+void MainWindow::showEditPassword() {
+    hideAll();
+    showBars();
+    _centerNormPasswordEdit->show();
 }
 
 void MainWindow::checkChangeMasterPassword() {
@@ -119,6 +127,66 @@ void MainWindow::startPasswordGen() {
     _passwordOutput->setText(Password);
 }
 
+void MainWindow::searchRow() {
+    bool ok;
+    int indexChangePassword = _inputRow->text().toInt(&ok) - 1;
+    if (!ok || indexChangePassword >= _passwordList.size() || indexChangePassword < 0) {
+        QMessageBox::warning(this, "Wrong Input", "Please only enter a number between 1 and " + QString::number(_passwordList.size()));
+    } else {
+        _showOldName->setText(_showPasswordList[indexChangePassword][0]);
+        _showOldUsername->setText(_showPasswordList[indexChangePassword][1]);
+        _showOldPassword->setText(_showPasswordList[indexChangePassword][2]);
+
+        _inputNewName->setText(_showPasswordList[indexChangePassword][0]);
+        _inputNewUsername->setText(_showPasswordList[indexChangePassword][1]);
+        _inputNewPassword->setText(_showPasswordList[indexChangePassword][2]);
+    }
+}
+
+
+void MainWindow::transferValues() {
+    _showNewName->setText(_inputNewName->text());
+    _showNewUsername->setText(_inputNewUsername->text());
+    _showNewPassword->setText(_inputNewPassword->text());
+}
+
+void MainWindow::changePasswordEntry() {
+    if (_showNewName->text().isEmpty() || _showNewUsername->text().isEmpty() ||_showNewPassword->text().isEmpty()) {
+        QMessageBox::warning(this, "Wrong Inputs", "Please press the transfare Button and check your changes before saving!");
+    } else {
+        bool ok;
+        int indexChangePassword = _inputRow->text().toInt(&ok) - 1;
+        if (!ok || indexChangePassword >= _passwordList.size() || indexChangePassword < 0) {
+            QMessageBox::warning(this, "Wrong Input", "Please only enter a number between 1 and " + QString::number(_passwordList.size()));
+        } else {
+            QString newName = _showNewName->text();
+            QString newUsername = _showNewUsername->text();
+            QString newPassword = _showNewPassword->text();
+
+            _passwordList[indexChangePassword][0] = newName;
+            _passwordList[indexChangePassword][1] = newUsername;
+            _passwordList[indexChangePassword][2] = newPassword;
+
+            encryptPasswords();
+            decryptPasswords();
+            _showPasswordList = _passwordList;
+            populateGrid();
+            QMessageBox::information(this, "Password change", "Your changes has been done!");
+            _inputRow->clear();
+            _inputNewName->clear();
+            _inputNewUsername->clear();
+            _inputNewPassword->clear();
+            _showOldName->clear();
+            _showOldUsername->clear();
+            _showOldPassword->clear();
+            _showNewName->clear();
+            _showNewUsername->clear();
+            _showNewPassword->clear();
+        }
+    }
+
+}
+
 ///////////////
 // off/on ui //
 ///////////////
@@ -141,6 +209,8 @@ void MainWindow::hideAll() {
     _centerPasswordList->hide();
     _centerPasswordGen->hide();
     _centerMasterPasswordEdit->hide();
+    _centerNormPasswordEdit->hide();
+    _centerNormPasswordEdit->hide();
 }
 
 void MainWindow::showBars() {
@@ -342,6 +412,13 @@ void MainWindow::populateGrid() {
     QFont font("Arial", 12);
     int row = 0;
 
+    // Vorhandene Widgets im _gridLayout löschen
+    QLayoutItem *child;
+    while ((child = _gridLayout->takeAt(0)) != nullptr) {
+        delete child->widget();
+        delete child;
+    }
+
     // Header erstellen
     QLineEdit *headerWebsite = new QLineEdit("Website");
     QLineEdit *headerUsername = new QLineEdit("Username/Email");
@@ -370,15 +447,16 @@ void MainWindow::populateGrid() {
     _gridLayout->addWidget(headerUsername, row, 2);
     _gridLayout->addWidget(headerPassword, row, 3);
 
-    for (int i = 0; i < _passwordList.size(); ++i) {
+    // Datenzeilen hinzufügen
+    for (int i = 0; i < _showPasswordList.size(); ++i) {
         ++row;
-        if (_passwordList[i].size() == 3) {
+        if (_showPasswordList[i].size() == 3) {
             QLineEdit *RowNum = new QLineEdit(QString::number(row));
-            QLineEdit *websiteLabel = new QLineEdit(_passwordList[i][0]);
-            QLineEdit *usernameLabel = new QLineEdit(_passwordList[i][1]);
-            QLineEdit *passwordLabel = new QLineEdit(_passwordList[i][2]);
+            QLineEdit *websiteLabel = new QLineEdit(_showPasswordList[i][0]);
+            QLineEdit *usernameLabel = new QLineEdit(_showPasswordList[i][1]);
+            QLineEdit *passwordLabel = new QLineEdit(_showPasswordList[i][2]);
 
-            RowNum->setFixedSize(40,15);
+            RowNum->setFixedSize(40, 15);
 
             configureLineEditAsLabel(RowNum, font);
             configureLineEditAsLabel(websiteLabel, font);
@@ -390,9 +468,12 @@ void MainWindow::populateGrid() {
             _gridLayout->addWidget(usernameLabel, row, 2);
             _gridLayout->addWidget(passwordLabel, row, 3);
         } else {
-            qDebug() << "Warnung: Unvollständiger Datensatz in _passwordList an Index" << i;
+            qDebug() << "Warnung: Unvollständiger Datensatz in _showPasswordList an Index" << i;
         }
     }
+
+    // Update des Layouts
+    _gridLayout->update();
 }
 
 void MainWindow::fillPasswords() {
@@ -472,29 +553,176 @@ void MainWindow::updateAllowedCharacters() {
 // setup //
 ///////////
 
-void MainWindow::setupLockscreen() {
-    int widgetWidth = 200;
-    int widgetHeight = 120;
+void MainWindow::setupPasswordEdit() {
+    int textLabelWidth = 100;
 
-    int buttonHeight = 30;
+    _centerNormPasswordEdit = new QWidget(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(_centerNormPasswordEdit);
+    mainLayout->setSpacing(20);
+    mainLayout->setContentsMargins(30, 30, 30, 30);
 
-    _lockscreenWidget = new QWidget(this);
-    _lockscreenLayout = new QVBoxLayout(_lockscreenWidget);
-    _lockscreenWidget->setLayout(_lockscreenLayout);
+    // Top section for input and search
+    QGroupBox *inputGroup = new QGroupBox("Edit Password Entry", this);
+    inputGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
+    QVBoxLayout *inputLayout = new QVBoxLayout(inputGroup);
 
-    _inputField = new QLineEdit(_lockscreenWidget);
-    _inputField->setFixedHeight(buttonHeight);
+    // Row number input and search button
+    QHBoxLayout *rowLayout = new QHBoxLayout();
+    QLabel *rowLabel = new QLabel("Row Number:", this);
+    _inputRow = new QLineEdit(this);
+    QPushButton *searchRowButton = new QPushButton("Search", this);
 
-    _buttonConfirm = new QPushButton("Confirm", _lockscreenWidget);
-    _buttonConfirm->setFixedHeight(buttonHeight);
+    rowLayout->addWidget(rowLabel);
+    rowLayout->addWidget(_inputRow);
+    rowLayout->addWidget(searchRowButton);
 
-    _lockscreenLayout->addWidget(_inputField);
-    _lockscreenLayout->addWidget(_buttonConfirm);
+    // New name, username, and password inputs
+    QHBoxLayout *nameInputLayout = new QHBoxLayout();
+    QLabel *newNameLabel = new QLabel("Name:", this);
+    _inputNewName = new QLineEdit(this);
 
-    _lockscreenWidget->setGeometry(_middleWidthScreen - widgetWidth / 2, _middleHeightScreen - widgetHeight / 2, widgetWidth, widgetHeight);
-    _lockscreenWidget->show();
+    nameInputLayout->addWidget(newNameLabel);
+    nameInputLayout->addWidget(_inputNewName);
 
-    connect(_buttonConfirm, SIGNAL(clicked()), this, SLOT(ConfirmPassword()));
+    QHBoxLayout *usernameInputLayout = new QHBoxLayout();
+    QLabel *newUsernameLabel = new QLabel("Username:", this);
+    _inputNewUsername = new QLineEdit(this);
+
+    usernameInputLayout->addWidget(newUsernameLabel);
+    usernameInputLayout->addWidget(_inputNewUsername);
+
+    QHBoxLayout *passwordInputLayout = new QHBoxLayout();
+    QLabel *newPasswordLabel = new QLabel("Password:", this);
+    _inputNewPassword = new QLineEdit(this);
+
+    passwordInputLayout->addWidget(newPasswordLabel);
+    passwordInputLayout->addWidget(_inputNewPassword);
+
+    // Add layouts to input group
+    inputLayout->addLayout(rowLayout);
+    inputLayout->addLayout(nameInputLayout);
+    inputLayout->addLayout(usernameInputLayout);
+    inputLayout->addLayout(passwordInputLayout);
+
+    // New button to transfer values to the display section
+    QPushButton *transferValuesButton = new QPushButton("Transfer Values", this);
+    inputLayout->addWidget(transferValuesButton);
+
+    // Set fixed widths and styles for top section
+    rowLabel->setFixedWidth(textLabelWidth);
+    newNameLabel->setFixedWidth(textLabelWidth);
+    newUsernameLabel->setFixedWidth(textLabelWidth);
+    newPasswordLabel->setFixedWidth(textLabelWidth);
+
+    rowLabel->setStyleSheet("font-size: 16px;");
+    newNameLabel->setStyleSheet("font-size: 16px;");
+    newUsernameLabel->setStyleSheet("font-size: 16px;");
+    newPasswordLabel->setStyleSheet("font-size: 16px;");
+    searchRowButton->setStyleSheet("font-size: 16px;");
+    transferValuesButton->setStyleSheet("font-size: 16px;");
+
+    _inputRow->setFixedHeight(40);
+    _inputNewName->setFixedHeight(40);
+    _inputNewUsername->setFixedHeight(40);
+    _inputNewPassword->setFixedHeight(40);
+    searchRowButton->setFixedHeight(40);
+    transferValuesButton->setFixedHeight(40);
+
+    // Bottom section for displaying old and new values and save button
+    QGroupBox *displayGroup = new QGroupBox("Old and New Values", this);
+    displayGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
+    QVBoxLayout *displayLayout = new QVBoxLayout(displayGroup);
+
+    QHBoxLayout *oldNameLayout = new QHBoxLayout();
+    QLabel *oldNameLabel = new QLabel("Old Name:", this);
+    _showOldName = new QLabel(this);
+    QLabel *newNameDisplayLabel = new QLabel("New Name:", this);
+    _showNewName = new QLabel(this);
+
+    oldNameLayout->addWidget(oldNameLabel);
+    oldNameLayout->addWidget(_showOldName);
+    oldNameLayout->addWidget(newNameDisplayLabel);
+    oldNameLayout->addWidget(_showNewName);
+
+    QHBoxLayout *oldUsernameLayout = new QHBoxLayout();
+    QLabel *oldUsernameLabel = new QLabel("Old Username:", this);
+    _showOldUsername = new QLabel(this);
+    QLabel *newUsernameDisplayLabel = new QLabel("New Username:", this);
+    _showNewUsername = new QLabel(this);
+
+    oldUsernameLayout->addWidget(oldUsernameLabel);
+    oldUsernameLayout->addWidget(_showOldUsername);
+    oldUsernameLayout->addWidget(newUsernameDisplayLabel);
+    oldUsernameLayout->addWidget(_showNewUsername);
+
+    QHBoxLayout *oldPasswordLayout = new QHBoxLayout();
+    QLabel *oldPasswordLabel = new QLabel("Old Password:", this);
+    _showOldPassword = new QLabel(this);
+    QLabel *newPasswordDisplayLabel = new QLabel("New Password:", this);
+    _showNewPassword = new QLabel(this);
+
+    oldPasswordLayout->addWidget(oldPasswordLabel);
+    oldPasswordLayout->addWidget(_showOldPassword);
+    oldPasswordLayout->addWidget(newPasswordDisplayLabel);
+    oldPasswordLayout->addWidget(_showNewPassword);
+
+    // Save changes button
+    _saveChangesNormPasswordEdit = new QPushButton("Save Changes", this);
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
+    buttonLayout->addWidget(_saveChangesNormPasswordEdit);
+
+    // Add layouts to display group
+    displayLayout->addLayout(oldNameLayout);
+    displayLayout->addLayout(oldUsernameLayout);
+    displayLayout->addLayout(oldPasswordLayout);
+    displayLayout->addLayout(buttonLayout);
+
+    // Set fixed styles for bottom section
+    _showOldName->setStyleSheet("font-size: 16px;");
+    _showOldUsername->setStyleSheet("font-size: 16px;");
+    _showOldPassword->setStyleSheet("font-size: 16px;");
+    _showNewName->setStyleSheet("font-size: 16px;");
+    _showNewUsername->setStyleSheet("font-size: 16px;");
+    _showNewPassword->setStyleSheet("font-size: 16px;");
+    _saveChangesNormPasswordEdit->setStyleSheet("font-size: 16px;");
+    _saveChangesNormPasswordEdit->setFixedHeight(40);
+
+    // Add groups to main layout
+    mainLayout->addWidget(inputGroup);
+    mainLayout->addWidget(displayGroup);
+
+    _centerNormPasswordEdit->setLayout(mainLayout);
+    _centerNormPasswordEdit->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
+    _centerNormPasswordEdit->hide();
+
+    // Connect signals and slots
+    connect(searchRowButton, SIGNAL(clicked()), this, SLOT(searchRow()));
+    connect(_saveChangesNormPasswordEdit, SIGNAL(clicked()), this, SLOT(changePasswordEntry()));
+    connect(transferValuesButton, SIGNAL(clicked()), this, SLOT(transferValues()));
+}
+
+void MainWindow::setupTopbar() {
+    int topbarHeight = 40;
+
+    _topBarWidget = new QWidget(this);
+    _topBarLayout = new QHBoxLayout(_topBarWidget);
+
+    _ButtonChangeSort = new QPushButton("Sort: A-Z", this);
+    _ButtonChangeSort->setFixedHeight(topbarHeight);
+
+    _inputSearch = new QLineEdit(this);
+    _inputSearch->setFixedHeight(topbarHeight);
+
+    _ButtonStartSearch = new QPushButton("Q", this);
+    _ButtonStartSearch->setFixedHeight(topbarHeight);
+
+    _topBarLayout->addWidget(_ButtonChangeSort);
+    _topBarLayout->addWidget(_inputSearch);
+    _topBarLayout->addWidget(_ButtonStartSearch);
+
+    _topBarWidget->setGeometry(210, 0, _screenWidth - 210, 100);
+
+    _topBarWidget->hide();
 }
 
 void MainWindow::setupSidebar() {
@@ -558,34 +786,10 @@ void MainWindow::setupSidebar() {
     connect(_ButtonOpenLockscreen, SIGNAL(clicked()), this, SLOT(lockScreen()));
     connect(_ButtonShowPasswords, SIGNAL(clicked()), this, SLOT(showPasswords()));
     connect(_ButtonChangeMasterPassword, SIGNAL(clicked()), this, SLOT(showMasterPasswordEdit()));
-
+    connect(_ButtonEditPassword, SIGNAL(clicked()), this, SLOT(showEditPassword()));
 
     _sideBarWidget->hide();
     _LabelLogo->hide();
-}
-
-void MainWindow::setupTopbar() {
-    int topbarHeight = 40;
-
-    _topBarWidget = new QWidget(this);
-    _topBarLayout = new QHBoxLayout(_topBarWidget);
-
-    _ButtonChangeSort = new QPushButton("Sort: A-Z", this);
-    _ButtonChangeSort->setFixedHeight(topbarHeight);
-
-    _inputSearch = new QLineEdit(this);
-    _inputSearch->setFixedHeight(topbarHeight);
-
-    _ButtonStartSearch = new QPushButton("Q", this);
-    _ButtonStartSearch->setFixedHeight(topbarHeight);
-
-    _topBarLayout->addWidget(_ButtonChangeSort);
-    _topBarLayout->addWidget(_inputSearch);
-    _topBarLayout->addWidget(_ButtonStartSearch);
-
-    _topBarWidget->setGeometry(210, 0, _screenWidth - 210, 100);
-
-    _topBarWidget->hide();
 }
 
 void MainWindow::setupCenterPasswordList() {
@@ -701,16 +905,29 @@ void MainWindow::setupPasswordGen() {
     connect(_startPasswordGen, &QPushButton::clicked, this, &MainWindow::startPasswordGen);
 }
 
-void MainWindow::setupPasswordEdit() {
+void MainWindow::setupLockscreen() {
+    int widgetWidth = 200;
+    int widgetHeight = 120;
 
-}
+    int buttonHeight = 30;
 
-void MainWindow::setupPasswordDel() {
+    _lockscreenWidget = new QWidget(this);
+    _lockscreenLayout = new QVBoxLayout(_lockscreenWidget);
+    _lockscreenWidget->setLayout(_lockscreenLayout);
 
-}
+    _inputField = new QLineEdit(_lockscreenWidget);
+    _inputField->setFixedHeight(buttonHeight);
 
-void MainWindow::setupAddPassword() {
+    _buttonConfirm = new QPushButton("Confirm", _lockscreenWidget);
+    _buttonConfirm->setFixedHeight(buttonHeight);
 
+    _lockscreenLayout->addWidget(_inputField);
+    _lockscreenLayout->addWidget(_buttonConfirm);
+
+    _lockscreenWidget->setGeometry(_middleWidthScreen - widgetWidth / 2, _middleHeightScreen - widgetHeight / 2, widgetWidth, widgetHeight);
+    _lockscreenWidget->show();
+
+    connect(_buttonConfirm, SIGNAL(clicked()), this, SLOT(ConfirmPassword()));
 }
 
 void MainWindow::setupEditMaster() {
@@ -744,4 +961,12 @@ void MainWindow::setupEditMaster() {
     _centerMasterPasswordEdit->hide();
 
     connect(_changeMasterPassword, SIGNAL(clicked()), this, SLOT(checkChangeMasterPassword()));
+}
+
+void MainWindow::setupPasswordDel() {
+
+}
+
+void MainWindow::setupAddPassword() {
+
 }

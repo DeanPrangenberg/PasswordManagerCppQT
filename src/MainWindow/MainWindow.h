@@ -38,7 +38,7 @@ private slots:
     void showPasswordGen();
     void showMasterPasswordEdit();
     void delPassword();
-    void editPassword();
+    void showEditPassword();
     void checkChangeMasterPassword();
     void lockScreen();
     void ConfirmPassword();
@@ -47,6 +47,9 @@ private slots:
     void onAllowNumbersToggled(bool checked);
     void onAllowSymbolsToggled(bool checked);
     void startPasswordGen();
+    void searchRow();
+    void transferValues();
+    void changePasswordEntry();
 
 private:
     // UI setup
@@ -135,8 +138,24 @@ private:
     QLabel *_newMasterPasswordLabel;
     QPushButton *_changeMasterPassword;
 
+    // center normal Password editor
+    QWidget *_centerNormPasswordEdit;
+    QLineEdit *_inputRow;
+    QLineEdit *_inputNewName;
+    QLineEdit *_inputNewUsername;
+    QLineEdit *_inputNewPassword;
+
+    QLabel *_showOldName;
+    QLabel *_showOldUsername;
+    QLabel *_showOldPassword;
+    QLabel *_showNewName;
+    QLabel *_showNewUsername;
+    QLabel *_showNewPassword;
+    QPushButton *_saveChangesNormPasswordEdit;
+
     // Data storage
     QVector<QVector<QString>> _passwordList;
+    QVector<QVector<QString>> _showPasswordList;
 
     // Constants
     const QString allChars = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
