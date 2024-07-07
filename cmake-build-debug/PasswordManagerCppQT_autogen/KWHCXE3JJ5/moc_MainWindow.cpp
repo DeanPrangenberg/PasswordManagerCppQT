@@ -40,14 +40,14 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "changeSort",
+    "addPasswordEntry",
     "",
-    "newEntry",
     "showPasswords",
     "showPasswordGen",
     "showMasterPasswordEdit",
     "showPasswordDel",
-    "delPassword",
+    "showAddEntry",
+    "deletePasswordEntry",
     "showEditPassword",
     "checkChangeMasterPassword",
     "lockScreen",
@@ -61,20 +61,22 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "searchRowEdit",
     "searchRowDel",
     "transferValues",
-    "changePasswordEntry"
+    "changePasswordEntry",
+    "searchInList",
+    "reloadList"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[46];
+    uint offsetsAndSizes[50];
     char stringdata0[11];
-    char stringdata1[11];
+    char stringdata1[17];
     char stringdata2[1];
-    char stringdata3[9];
-    char stringdata4[14];
-    char stringdata5[16];
-    char stringdata6[23];
-    char stringdata7[16];
-    char stringdata8[12];
+    char stringdata3[14];
+    char stringdata4[16];
+    char stringdata5[23];
+    char stringdata6[16];
+    char stringdata7[13];
+    char stringdata8[20];
     char stringdata9[17];
     char stringdata10[26];
     char stringdata11[11];
@@ -89,44 +91,48 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata20[13];
     char stringdata21[15];
     char stringdata22[20];
+    char stringdata23[13];
+    char stringdata24[11];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
-        QT_MOC_LITERAL(11, 10),  // "changeSort"
-        QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 8),  // "newEntry"
-        QT_MOC_LITERAL(32, 13),  // "showPasswords"
-        QT_MOC_LITERAL(46, 15),  // "showPasswordGen"
-        QT_MOC_LITERAL(62, 22),  // "showMasterPasswordEdit"
-        QT_MOC_LITERAL(85, 15),  // "showPasswordDel"
-        QT_MOC_LITERAL(101, 11),  // "delPassword"
-        QT_MOC_LITERAL(113, 16),  // "showEditPassword"
-        QT_MOC_LITERAL(130, 25),  // "checkChangeMasterPassword"
-        QT_MOC_LITERAL(156, 10),  // "lockScreen"
-        QT_MOC_LITERAL(167, 15),  // "ConfirmPassword"
-        QT_MOC_LITERAL(183, 25),  // "onAllowLowAlphabetToggled"
-        QT_MOC_LITERAL(209, 7),  // "checked"
-        QT_MOC_LITERAL(217, 24),  // "onAllowUpAlphabetToggled"
-        QT_MOC_LITERAL(242, 21),  // "onAllowNumbersToggled"
-        QT_MOC_LITERAL(264, 21),  // "onAllowSymbolsToggled"
-        QT_MOC_LITERAL(286, 16),  // "startPasswordGen"
-        QT_MOC_LITERAL(303, 13),  // "searchRowEdit"
-        QT_MOC_LITERAL(317, 12),  // "searchRowDel"
-        QT_MOC_LITERAL(330, 14),  // "transferValues"
-        QT_MOC_LITERAL(345, 19)   // "changePasswordEntry"
+        QT_MOC_LITERAL(11, 16),  // "addPasswordEntry"
+        QT_MOC_LITERAL(28, 0),  // ""
+        QT_MOC_LITERAL(29, 13),  // "showPasswords"
+        QT_MOC_LITERAL(43, 15),  // "showPasswordGen"
+        QT_MOC_LITERAL(59, 22),  // "showMasterPasswordEdit"
+        QT_MOC_LITERAL(82, 15),  // "showPasswordDel"
+        QT_MOC_LITERAL(98, 12),  // "showAddEntry"
+        QT_MOC_LITERAL(111, 19),  // "deletePasswordEntry"
+        QT_MOC_LITERAL(131, 16),  // "showEditPassword"
+        QT_MOC_LITERAL(148, 25),  // "checkChangeMasterPassword"
+        QT_MOC_LITERAL(174, 10),  // "lockScreen"
+        QT_MOC_LITERAL(185, 15),  // "ConfirmPassword"
+        QT_MOC_LITERAL(201, 25),  // "onAllowLowAlphabetToggled"
+        QT_MOC_LITERAL(227, 7),  // "checked"
+        QT_MOC_LITERAL(235, 24),  // "onAllowUpAlphabetToggled"
+        QT_MOC_LITERAL(260, 21),  // "onAllowNumbersToggled"
+        QT_MOC_LITERAL(282, 21),  // "onAllowSymbolsToggled"
+        QT_MOC_LITERAL(304, 16),  // "startPasswordGen"
+        QT_MOC_LITERAL(321, 13),  // "searchRowEdit"
+        QT_MOC_LITERAL(335, 12),  // "searchRowDel"
+        QT_MOC_LITERAL(348, 14),  // "transferValues"
+        QT_MOC_LITERAL(363, 19),  // "changePasswordEntry"
+        QT_MOC_LITERAL(383, 12),  // "searchInList"
+        QT_MOC_LITERAL(396, 10)   // "reloadList"
     },
     "MainWindow",
-    "changeSort",
+    "addPasswordEntry",
     "",
-    "newEntry",
     "showPasswords",
     "showPasswordGen",
     "showMasterPasswordEdit",
     "showPasswordDel",
-    "delPassword",
+    "showAddEntry",
+    "deletePasswordEntry",
     "showEditPassword",
     "checkChangeMasterPassword",
     "lockScreen",
@@ -140,7 +146,9 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "searchRowEdit",
     "searchRowDel",
     "transferValues",
-    "changePasswordEntry"
+    "changePasswordEntry",
+    "searchInList",
+    "reloadList"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -152,7 +160,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -160,26 +168,28 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  134,    2, 0x08,    1 /* Private */,
-       3,    0,  135,    2, 0x08,    2 /* Private */,
-       4,    0,  136,    2, 0x08,    3 /* Private */,
-       5,    0,  137,    2, 0x08,    4 /* Private */,
-       6,    0,  138,    2, 0x08,    5 /* Private */,
-       7,    0,  139,    2, 0x08,    6 /* Private */,
-       8,    0,  140,    2, 0x08,    7 /* Private */,
-       9,    0,  141,    2, 0x08,    8 /* Private */,
-      10,    0,  142,    2, 0x08,    9 /* Private */,
-      11,    0,  143,    2, 0x08,   10 /* Private */,
-      12,    0,  144,    2, 0x08,   11 /* Private */,
-      13,    1,  145,    2, 0x08,   12 /* Private */,
-      15,    1,  148,    2, 0x08,   14 /* Private */,
-      16,    1,  151,    2, 0x08,   16 /* Private */,
-      17,    1,  154,    2, 0x08,   18 /* Private */,
-      18,    0,  157,    2, 0x08,   20 /* Private */,
-      19,    0,  158,    2, 0x08,   21 /* Private */,
-      20,    0,  159,    2, 0x08,   22 /* Private */,
-      21,    0,  160,    2, 0x08,   23 /* Private */,
-      22,    0,  161,    2, 0x08,   24 /* Private */,
+       1,    0,  146,    2, 0x08,    1 /* Private */,
+       3,    0,  147,    2, 0x08,    2 /* Private */,
+       4,    0,  148,    2, 0x08,    3 /* Private */,
+       5,    0,  149,    2, 0x08,    4 /* Private */,
+       6,    0,  150,    2, 0x08,    5 /* Private */,
+       7,    0,  151,    2, 0x08,    6 /* Private */,
+       8,    0,  152,    2, 0x08,    7 /* Private */,
+       9,    0,  153,    2, 0x08,    8 /* Private */,
+      10,    0,  154,    2, 0x08,    9 /* Private */,
+      11,    0,  155,    2, 0x08,   10 /* Private */,
+      12,    0,  156,    2, 0x08,   11 /* Private */,
+      13,    1,  157,    2, 0x08,   12 /* Private */,
+      15,    1,  160,    2, 0x08,   14 /* Private */,
+      16,    1,  163,    2, 0x08,   16 /* Private */,
+      17,    1,  166,    2, 0x08,   18 /* Private */,
+      18,    0,  169,    2, 0x08,   20 /* Private */,
+      19,    0,  170,    2, 0x08,   21 /* Private */,
+      20,    0,  171,    2, 0x08,   22 /* Private */,
+      21,    0,  172,    2, 0x08,   23 /* Private */,
+      22,    0,  173,    2, 0x08,   24 /* Private */,
+      23,    0,  174,    2, 0x08,   25 /* Private */,
+      24,    0,  175,    2, 0x08,   26 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -202,6 +212,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -215,9 +227,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
-        // method 'changeSort'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'newEntry'
+        // method 'addPasswordEntry'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'showPasswords'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -227,7 +237,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'showPasswordDel'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'delPassword'
+        // method 'showAddEntry'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'deletePasswordEntry'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'showEditPassword'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -258,6 +270,10 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'transferValues'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'changePasswordEntry'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'searchInList'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'reloadList'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -269,13 +285,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->changeSort(); break;
-        case 1: _t->newEntry(); break;
-        case 2: _t->showPasswords(); break;
-        case 3: _t->showPasswordGen(); break;
-        case 4: _t->showMasterPasswordEdit(); break;
-        case 5: _t->showPasswordDel(); break;
-        case 6: _t->delPassword(); break;
+        case 0: _t->addPasswordEntry(); break;
+        case 1: _t->showPasswords(); break;
+        case 2: _t->showPasswordGen(); break;
+        case 3: _t->showMasterPasswordEdit(); break;
+        case 4: _t->showPasswordDel(); break;
+        case 5: _t->showAddEntry(); break;
+        case 6: _t->deletePasswordEntry(); break;
         case 7: _t->showEditPassword(); break;
         case 8: _t->checkChangeMasterPassword(); break;
         case 9: _t->lockScreen(); break;
@@ -289,6 +305,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 17: _t->searchRowDel(); break;
         case 18: _t->transferValues(); break;
         case 19: _t->changePasswordEntry(); break;
+        case 20: _t->searchInList(); break;
+        case 21: _t->reloadList(); break;
         default: ;
         }
     }
@@ -313,13 +331,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 22)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 20;
+        _id -= 22;
     }
     return _id;
 }

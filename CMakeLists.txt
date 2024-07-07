@@ -16,7 +16,11 @@ find_package(Qt6 COMPONENTS
 
 add_executable(PasswordManagerCppQT main.cpp
         src/MainWindow/MainWindow.cpp
-        src/MainWindow/MainWindow.h)
+        src/MainWindow/MainWindow.h
+        src/functions/dataHandeling.cpp
+        src/functions/enDecryption.cpp
+        src/functions/slots.cpp
+        src/functions/setupUI.cpp)
 target_link_libraries(PasswordManagerCppQT
         Qt::Core
         Qt::Gui

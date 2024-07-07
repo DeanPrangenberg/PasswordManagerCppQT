@@ -661,4 +661,8 @@ PasswordManagerCppQT_autogen/timestamp: \
   PasswordManagerCppQT_autogen/moc_predefs.h \
   S:/GitHub/PasswordManagerCppQT/main.cpp \
   S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp \
-  S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h
+  S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.h \
+  S:/GitHub/PasswordManagerCppQT/src/functions/dataHandeling.cpp \
+  S:/GitHub/PasswordManagerCppQT/src/functions/enDecryption.cpp \
+  S:/GitHub/PasswordManagerCppQT/src/functions/setupUI.cpp \
+  S:/GitHub/PasswordManagerCppQT/src/functions/slots.cpp

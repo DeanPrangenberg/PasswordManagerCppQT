@@ -301,7 +301,23 @@
 			"S:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp",
 			"MU",
 			null
-		]
+		],
+		[
+			"S:/GitHub/PasswordManagerCppQT/src/functions/dataHandeling.cpp",
+			"MU",
+			null
+		],
+		[
+			"S:/GitHub/PasswordManagerCppQT/src/functions/enDecryption.cpp",
+			"MU",
+			null
+		],
+		[
+			"S:/GitHub/PasswordManagerCppQT/src/functions/setupUI.cpp",
+			"MU",
+			null
+		],
+		[ "S:/GitHub/PasswordManagerCppQT/src/functions/slots.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

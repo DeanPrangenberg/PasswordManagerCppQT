@@ -32,13 +32,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
 private slots:
-    void changeSort();
-    void newEntry();
+    void addPasswordEntry();
     void showPasswords();
     void showPasswordGen();
     void showMasterPasswordEdit();
     void showPasswordDel();
-    void delPassword();
+    void showAddEntry();
+    void deletePasswordEntry();
     void showEditPassword();
     void checkChangeMasterPassword();
     void lockScreen();
@@ -52,12 +52,14 @@ private slots:
     void searchRowDel();
     void transferValues();
     void changePasswordEntry();
+    void searchInList();
+    void reloadList();
 
 private:
     // UI setup
     void setupSidebar();
     void setupTopbar();
-    void setupCenterPasswordList();
+    void setupPasswordList();
     void setupLockscreen();
     void setupPasswordGen();
     void setupPasswordEdit();
@@ -106,7 +108,7 @@ private:
     QHBoxLayout *_topBarLayout;
     QWidget *_topBarWidget;
     QPushButton *_ButtonStartSearch;
-    QPushButton *_ButtonChangeSort;
+    QPushButton *_ButtonReload;
     QLineEdit *_inputSearch;
 
     // Center password list
@@ -162,7 +164,15 @@ private:
     QLabel *_showOldUsernameDel;
     QLabel *_showOldPasswordDel;
 
-
+    // add new entry
+    QWidget *_centerAddPassword;
+    QLineEdit *_inputAddName;
+    QLineEdit *_inputAddUsername;
+    QLineEdit *_inputAddPassword;
+    QLabel *_showAddName;
+    QLabel *_showAddUsername;
+    QLabel *_showAddPassword;
+    QPushButton *_saveNewPasswordButton;
 
     // Data storage
     QVector<QVector<QString>> _passwordList;

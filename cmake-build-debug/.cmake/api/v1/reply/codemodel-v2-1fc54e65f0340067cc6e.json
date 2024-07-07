@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "PasswordManagerCppQT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "PasswordManagerCppQT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PasswordManagerCppQT-Debug-17faf4a0092ea10e21d3.json",
+					"name" : "PasswordManagerCppQT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PasswordManagerCppQT_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PasswordManagerCppQT_autogen-Debug-a95f50ea45fa5d169728.json",
+					"name" : "PasswordManagerCppQT_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PasswordManagerCppQT_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PasswordManagerCppQT_autogen_timestamp_deps-Debug-a1ddbf8dd4c9a80a9869.json",
+					"name" : "PasswordManagerCppQT_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "S:/GitHub/PasswordManagerCppQT/cmake-build-debug",
+		"source" : "S:/GitHub/PasswordManagerCppQT"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
