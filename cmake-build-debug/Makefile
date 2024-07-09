@@ -56,10 +56,10 @@ RM = C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\GitHub\PasswordManagerCppQT
+CMAKE_SOURCE_DIR = C:\GitHub\PasswordManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\GitHub\PasswordManagerCppQT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\GitHub\PasswordManager\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles C:\GitHub\PasswordManagerCppQT\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles C:\GitHub\PasswordManager\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -226,6 +226,102 @@ src/MainWindow/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.s
 .PHONY : src/MainWindow/MainWindow.cpp.s
 
+src/functions/dataHandeling.obj: src/functions/dataHandeling.cpp.obj
+.PHONY : src/functions/dataHandeling.obj
+
+# target to build an object file
+src/functions/dataHandeling.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj
+.PHONY : src/functions/dataHandeling.cpp.obj
+
+src/functions/dataHandeling.i: src/functions/dataHandeling.cpp.i
+.PHONY : src/functions/dataHandeling.i
+
+# target to preprocess a source file
+src/functions/dataHandeling.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.i
+.PHONY : src/functions/dataHandeling.cpp.i
+
+src/functions/dataHandeling.s: src/functions/dataHandeling.cpp.s
+.PHONY : src/functions/dataHandeling.s
+
+# target to generate assembly for a file
+src/functions/dataHandeling.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.s
+.PHONY : src/functions/dataHandeling.cpp.s
+
+src/functions/enDecryption.obj: src/functions/enDecryption.cpp.obj
+.PHONY : src/functions/enDecryption.obj
+
+# target to build an object file
+src/functions/enDecryption.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj
+.PHONY : src/functions/enDecryption.cpp.obj
+
+src/functions/enDecryption.i: src/functions/enDecryption.cpp.i
+.PHONY : src/functions/enDecryption.i
+
+# target to preprocess a source file
+src/functions/enDecryption.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.i
+.PHONY : src/functions/enDecryption.cpp.i
+
+src/functions/enDecryption.s: src/functions/enDecryption.cpp.s
+.PHONY : src/functions/enDecryption.s
+
+# target to generate assembly for a file
+src/functions/enDecryption.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.s
+.PHONY : src/functions/enDecryption.cpp.s
+
+src/functions/setupUI.obj: src/functions/setupUI.cpp.obj
+.PHONY : src/functions/setupUI.obj
+
+# target to build an object file
+src/functions/setupUI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj
+.PHONY : src/functions/setupUI.cpp.obj
+
+src/functions/setupUI.i: src/functions/setupUI.cpp.i
+.PHONY : src/functions/setupUI.i
+
+# target to preprocess a source file
+src/functions/setupUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.i
+.PHONY : src/functions/setupUI.cpp.i
+
+src/functions/setupUI.s: src/functions/setupUI.cpp.s
+.PHONY : src/functions/setupUI.s
+
+# target to generate assembly for a file
+src/functions/setupUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.s
+.PHONY : src/functions/setupUI.cpp.s
+
+src/functions/slots.obj: src/functions/slots.cpp.obj
+.PHONY : src/functions/slots.obj
+
+# target to build an object file
+src/functions/slots.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj
+.PHONY : src/functions/slots.cpp.obj
+
+src/functions/slots.i: src/functions/slots.cpp.i
+.PHONY : src/functions/slots.i
+
+# target to preprocess a source file
+src/functions/slots.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.i
+.PHONY : src/functions/slots.cpp.i
+
+src/functions/slots.s: src/functions/slots.cpp.s
+.PHONY : src/functions/slots.s
+
+# target to generate assembly for a file
+src/functions/slots.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordManagerCppQT.dir\build.make CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.s
+.PHONY : src/functions/slots.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -246,6 +342,18 @@ help:
 	@echo ... src/MainWindow/MainWindow.obj
 	@echo ... src/MainWindow/MainWindow.i
 	@echo ... src/MainWindow/MainWindow.s
+	@echo ... src/functions/dataHandeling.obj
+	@echo ... src/functions/dataHandeling.i
+	@echo ... src/functions/dataHandeling.s
+	@echo ... src/functions/enDecryption.obj
+	@echo ... src/functions/enDecryption.i
+	@echo ... src/functions/enDecryption.s
+	@echo ... src/functions/setupUI.obj
+	@echo ... src/functions/setupUI.i
+	@echo ... src/functions/setupUI.s
+	@echo ... src/functions/slots.obj
+	@echo ... src/functions/slots.i
+	@echo ... src/functions/slots.s
 .PHONY : help
 
 
