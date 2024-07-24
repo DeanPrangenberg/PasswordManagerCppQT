@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/GitHub/PasswordManagerCppQT/CMakeLists.txt"
+  "C:/GitHub/PasswordManager/CMakeLists.txt"
   "CMakeFiles/3.28.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.1/CMakeRCCompiler.cmake"

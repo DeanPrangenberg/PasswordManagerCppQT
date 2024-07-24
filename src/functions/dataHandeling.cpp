@@ -126,29 +126,16 @@ void MainWindow::populateGrid() {
 
 void MainWindow::fillPasswords() {
     QVector<QVector<QString>> tempVec;
-
     for (int i = 0; i < 100; ++i) {
         QVector<QString> temp2Vec;
-        for (int j = 0; j < 3; ++j) {
-            switch (j) {
-                case 0:
-                    temp2Vec.push_back("example" + QString::number(i) + ".com");
-                    break;
-                case 1:
-                    temp2Vec.push_back("user" + QString::number(i) + "@example.com");
-                    break;
-                case 2:
-                    temp2Vec.push_back("password" + QString::number(i));
-                    break;
-                default:
-                    qDebug() << "Unbekannter Fall im Switch: j = " << j;
-                    break;
-            }
-        }
+        temp2Vec.push_back("example" + QString::number(i) + ".com");
+        temp2Vec.push_back("user" + QString::number(i) + "@example.com");
+        temp2Vec.push_back("password" + QString::number(i));
         tempVec.push_back(temp2Vec);
     }
 
     _passwordList = tempVec;
+    tempVec.clear();
     encryptPasswords();
 }
 

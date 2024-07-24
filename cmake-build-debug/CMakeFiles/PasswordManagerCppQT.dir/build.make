@@ -52,10 +52,10 @@ RM = C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\GitHub\PasswordManagerCppQT
+CMAKE_SOURCE_DIR = C:\GitHub\PasswordManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\GitHub\PasswordManagerCppQT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\GitHub\PasswordManager\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PasswordManagerCppQT.dir/depend.make
@@ -72,52 +72,116 @@ CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilatio
 CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
 CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj: PasswordManagerCppQT_autogen/mocs_compilation.cpp
 CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.obj -c C:\GitHub\PasswordManagerCppQT\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.obj -c C:\GitHub\PasswordManager\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp
 
 CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.i"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManagerCppQT\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp > CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.i
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp > CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.i
 
 CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.s"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManagerCppQT\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp -o CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.s
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\cmake-build-debug\PasswordManagerCppQT_autogen\mocs_compilation.cpp -o CMakeFiles\PasswordManagerCppQT.dir\PasswordManagerCppQT_autogen\mocs_compilation.cpp.s
 
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
-CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: C:/GitHub/PasswordManagerCppQT/main.cpp
+CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: C:/GitHub/PasswordManager/main.cpp
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\main.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\main.cpp.obj -c C:\GitHub\PasswordManagerCppQT\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\main.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\main.cpp.obj -c C:\GitHub\PasswordManager\main.cpp
 
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/main.cpp.i"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManagerCppQT\main.cpp > CMakeFiles\PasswordManagerCppQT.dir\main.cpp.i
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\main.cpp > CMakeFiles\PasswordManagerCppQT.dir\main.cpp.i
 
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/main.cpp.s"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManagerCppQT\main.cpp -o CMakeFiles\PasswordManagerCppQT.dir\main.cpp.s
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\main.cpp -o CMakeFiles\PasswordManagerCppQT.dir\main.cpp.s
 
 CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
 CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
-CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: C:/GitHub/PasswordManagerCppQT/src/MainWindow/MainWindow.cpp
+CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: C:/GitHub/PasswordManager/src/MainWindow/MainWindow.cpp
 CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.obj -c C:\GitHub\PasswordManagerCppQT\src\MainWindow\MainWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.obj -c C:\GitHub\PasswordManager\src\MainWindow\MainWindow.cpp
 
 CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.i"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManagerCppQT\src\MainWindow\MainWindow.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.i
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\src\MainWindow\MainWindow.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.i
 
 CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.s"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManagerCppQT\src\MainWindow\MainWindow.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.s
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\src\MainWindow\MainWindow.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\MainWindow\MainWindow.cpp.s
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj: C:/GitHub/PasswordManager/src/functions/dataHandeling.cpp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\functions\dataHandeling.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\dataHandeling.cpp.obj -c C:\GitHub\PasswordManager\src\functions\dataHandeling.cpp
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.i"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\src\functions\dataHandeling.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\functions\dataHandeling.cpp.i
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.s"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\src\functions\dataHandeling.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\dataHandeling.cpp.s
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj: C:/GitHub/PasswordManager/src/functions/enDecryption.cpp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\functions\enDecryption.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\enDecryption.cpp.obj -c C:\GitHub\PasswordManager\src\functions\enDecryption.cpp
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.i"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\src\functions\enDecryption.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\functions\enDecryption.cpp.i
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.s"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\src\functions\enDecryption.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\enDecryption.cpp.s
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj: C:/GitHub/PasswordManager/src/functions/slots.cpp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\functions\slots.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\slots.cpp.obj -c C:\GitHub\PasswordManager\src\functions\slots.cpp
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.i"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\src\functions\slots.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\functions\slots.cpp.i
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.s"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\src\functions\slots.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\slots.cpp.s
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/flags.make
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/includes_CXX.rsp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj: C:/GitHub/PasswordManager/src/functions/setupUI.cpp
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj: CMakeFiles/PasswordManagerCppQT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj -MF CMakeFiles\PasswordManagerCppQT.dir\src\functions\setupUI.cpp.obj.d -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\setupUI.cpp.obj -c C:\GitHub\PasswordManager\src\functions\setupUI.cpp
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.i"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\GitHub\PasswordManager\src\functions\setupUI.cpp > CMakeFiles\PasswordManagerCppQT.dir\src\functions\setupUI.cpp.i
+
+CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.s"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\GitHub\PasswordManager\src\functions\setupUI.cpp -o CMakeFiles\PasswordManagerCppQT.dir\src\functions\setupUI.cpp.s
 
 # Object files for target PasswordManagerCppQT
 PasswordManagerCppQT_OBJECTS = \
 "CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj" \
-"CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj"
+"CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj" \
+"CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj" \
+"CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj" \
+"CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj" \
+"CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj"
 
 # External object files for target PasswordManagerCppQT
 PasswordManagerCppQT_EXTERNAL_OBJECTS =
@@ -125,6 +189,10 @@ PasswordManagerCppQT_EXTERNAL_OBJECTS =
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/src/MainWindow/MainWindow.cpp.obj
+PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/src/functions/dataHandeling.cpp.obj
+PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/src/functions/enDecryption.cpp.obj
+PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj
+PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/build.make
 PasswordManagerCppQT.exe: C:/Qt/6.6.0/mingw_64/lib/libQt6Widgets.a
 PasswordManagerCppQT.exe: C:/Qt/6.6.0/mingw_64/lib/libQt6Gui.a
@@ -132,13 +200,13 @@ PasswordManagerCppQT.exe: C:/Qt/6.6.0/mingw_64/lib/libQt6Core.a
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/linkLibs.rsp
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/objects1.rsp
 PasswordManagerCppQT.exe: CMakeFiles/PasswordManagerCppQT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PasswordManagerCppQT.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable PasswordManagerCppQT.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PasswordManagerCppQT.dir\link.txt --verbose=$(VERBOSE)
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E make_directory C:/GitHub/PasswordManagerCppQT/cmake-build-debug/plugins/platforms/
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/plugins/platforms/qwindows.dll C:/GitHub/PasswordManagerCppQT/cmake-build-debug/plugins/platforms/
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Core.dll C:/GitHub/PasswordManagerCppQT/cmake-build-debug
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Gui.dll C:/GitHub/PasswordManagerCppQT/cmake-build-debug
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Widgets.dll C:/GitHub/PasswordManagerCppQT/cmake-build-debug
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E make_directory C:/GitHub/PasswordManager/cmake-build-debug/plugins/platforms/
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/plugins/platforms/qwindows.dll C:/GitHub/PasswordManager/cmake-build-debug/plugins/platforms/
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Core.dll C:/GitHub/PasswordManager/cmake-build-debug
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Gui.dll C:/GitHub/PasswordManager/cmake-build-debug
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E copy C:/Qt/6.6.0/mingw_64/bin/Qt6Widgets.dll C:/GitHub/PasswordManager/cmake-build-debug
 
 # Rule to build all files generated by this target.
 CMakeFiles/PasswordManagerCppQT.dir/build: PasswordManagerCppQT.exe
@@ -149,6 +217,6 @@ CMakeFiles/PasswordManagerCppQT.dir/clean:
 .PHONY : CMakeFiles/PasswordManagerCppQT.dir/clean
 
 CMakeFiles/PasswordManagerCppQT.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles\PasswordManagerCppQT.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManager C:\GitHub\PasswordManager C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles\PasswordManagerCppQT.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/PasswordManagerCppQT.dir/depend
 

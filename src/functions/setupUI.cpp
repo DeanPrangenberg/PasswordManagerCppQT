@@ -6,6 +6,7 @@
 
 
 void MainWindow::setupTopbar() {
+    qDebug() << "Setup: Starting setupTopbar";
     int topbarHeight = 40;
 
     _topBarWidget = new QWidget(this);
@@ -29,9 +30,11 @@ void MainWindow::setupTopbar() {
     _topBarWidget->hide();
     connect(_ButtonStartSearch, SIGNAL(clicked()), this, SLOT(searchInList()));
     connect(_ButtonReload, SIGNAL(clicked()), this, SLOT(reloadList()));
+    qDebug() << "Setup: Completed setupTopbar";
 }
 
 void MainWindow::setupSidebar() {
+    qDebug() << "Setup: Starting setupSidebar";
     // Geometric
     int logoHeight = 100;
     int logoWidth = 210;
@@ -99,9 +102,11 @@ void MainWindow::setupSidebar() {
 
     _sideBarWidget->hide();
     _LabelLogo->hide();
+    qDebug() << "Setup: Completed setupSidebar";
 }
 
 void MainWindow::setupPasswordEdit() {
+    qDebug() << "Setup: Starting setupPasswordEdit";
     int textLabelWidth = 130;
 
     _centerNormPasswordEdit = new QWidget(this);
@@ -247,9 +252,11 @@ void MainWindow::setupPasswordEdit() {
     connect(searchRowEditButton, SIGNAL(clicked()), this, SLOT(searchRowEdit()));
     connect(_saveChangesNormPasswordEdit, SIGNAL(clicked()), this, SLOT(changePasswordEntry()));
     connect(transferValuesButton, SIGNAL(clicked()), this, SLOT(transferValues()));
+    qDebug() << "Setup: Completed setupPasswordEdit";
 }
 
 void MainWindow::setupPasswordList() {
+    qDebug() << "Setup: Starting setupPasswordList";
     _centerPasswordList = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout(_centerPasswordList);
 
@@ -273,10 +280,11 @@ void MainWindow::setupPasswordList() {
     _centerPasswordList->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
 
     _centerPasswordList->hide();
+    qDebug() << "Setup: Completed setupPasswordList";
 }
 
 void MainWindow::setupPasswordGen() {
-    qDebug() << "Starting setupPasswordGen";
+    qDebug() << "Setup: Starting setupPasswordGen";
 
     // Initialisiere Checkboxen
     _allowLowAlphabet = new QCheckBox("Include Lowercase Alphabet (a-z)", this);
@@ -284,23 +292,17 @@ void MainWindow::setupPasswordGen() {
     _allowNumbers = new QCheckBox("Include Numbers (0-9)", this);
     _allowSymbols = new QCheckBox("Include Symbols", this);
 
-    qDebug() << "Checkboxes initialized";
-
     // Setze Standardwerte für Checkboxen
     _allowLowAlphabet->setChecked(true);
     _allowUpAlphabet->setChecked(true);
     _allowNumbers->setChecked(true);
     _allowSymbols->setChecked(true);
 
-    qDebug() << "Default values set";
-
     // Verbinde Checkboxen mit den entsprechenden Slots
     connect(_allowLowAlphabet, &QCheckBox::toggled, this, &MainWindow::onAllowLowAlphabetToggled);
     connect(_allowUpAlphabet, &QCheckBox::toggled, this, &MainWindow::onAllowUpAlphabetToggled);
     connect(_allowNumbers, &QCheckBox::toggled, this, &MainWindow::onAllowNumbersToggled);
     connect(_allowSymbols, &QCheckBox::toggled, this, &MainWindow::onAllowSymbolsToggled);
-
-    qDebug() << "Connections established";
 
     // Erstelle das zentrale Widget und Layout
     _centerPasswordGen = new QWidget(this);
@@ -358,7 +360,7 @@ void MainWindow::setupPasswordGen() {
     _centerPasswordGen->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
     _centerPasswordGen->hide();
 
-    qDebug() << "setupPasswordGen completed";
+    qDebug() << "Setup: Completed setupPasswordGen";
 }
 
 void MainWindow::setupLockscreen() {

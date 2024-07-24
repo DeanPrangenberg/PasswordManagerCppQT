@@ -52,10 +52,10 @@ RM = C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\GitHub\PasswordManagerCppQT
+CMAKE_SOURCE_DIR = C:\GitHub\PasswordManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\GitHub\PasswordManagerCppQT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\GitHub\PasswordManager\cmake-build-debug
 
 # Utility rule file for PasswordManagerCppQT_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles\PasswordManagerCppQT_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManager C:\GitHub\PasswordManager C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles\PasswordManagerCppQT_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir/depend
 

@@ -52,10 +52,10 @@ RM = C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\GitHub\PasswordManagerCppQT
+CMAKE_SOURCE_DIR = C:\GitHub\PasswordManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\GitHub\PasswordManagerCppQT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\GitHub\PasswordManager\cmake-build-debug
 
 # Utility rule file for PasswordManagerCppQT_autogen.
 
@@ -70,9 +70,9 @@ CMakeFiles/PasswordManagerCppQT_autogen: PasswordManagerCppQT_autogen/timestamp
 PasswordManagerCppQT_autogen/timestamp: C:/Qt/6.6.0/mingw_64/./bin/moc.exe
 PasswordManagerCppQT_autogen/timestamp: C:/Qt/6.6.0/mingw_64/./bin/uic.exe
 PasswordManagerCppQT_autogen/timestamp: CMakeFiles/PasswordManagerCppQT_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PasswordManagerCppQT"
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/GitHub/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen.dir/AutogenInfo.json Debug
-	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E touch C:/GitHub/PasswordManagerCppQT/cmake-build-debug/PasswordManagerCppQT_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PasswordManagerCppQT"
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen.dir/AutogenInfo.json Debug
+	C:\Users\prang\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E touch C:/GitHub/PasswordManager/cmake-build-debug/PasswordManagerCppQT_autogen/timestamp
 
 PasswordManagerCppQT_autogen: CMakeFiles/PasswordManagerCppQT_autogen
 PasswordManagerCppQT_autogen: PasswordManagerCppQT_autogen/timestamp
@@ -88,6 +88,6 @@ CMakeFiles/PasswordManagerCppQT_autogen.dir/clean:
 .PHONY : CMakeFiles/PasswordManagerCppQT_autogen.dir/clean
 
 CMakeFiles/PasswordManagerCppQT_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug C:\GitHub\PasswordManagerCppQT\cmake-build-debug\CMakeFiles\PasswordManagerCppQT_autogen.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\GitHub\PasswordManager C:\GitHub\PasswordManager C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug C:\GitHub\PasswordManager\cmake-build-debug\CMakeFiles\PasswordManagerCppQT_autogen.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/PasswordManagerCppQT_autogen.dir/depend
 

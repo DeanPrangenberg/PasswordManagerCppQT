@@ -1,6 +1,6 @@
 CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj: \
- C:\GitHub\PasswordManagerCppQT\main.cpp \
- C:\GitHub\PasswordManagerCppQT\src\MainWindow\MainWindow.h \
+ C:\GitHub\PasswordManager\main.cpp \
+ C:\GitHub\PasswordManager\src\MainWindow\MainWindow.h \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

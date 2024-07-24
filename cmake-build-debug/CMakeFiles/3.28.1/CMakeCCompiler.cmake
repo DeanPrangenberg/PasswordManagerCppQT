@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/gcc.exe")
+set(CMAKE_C_COMPILER "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.1.0")
@@ -21,11 +21,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/ar.exe")
-set(CMAKE_C_COMPILER_AR "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "G:/Jet_brains_IDEs/CLion/bin/mingw/bin/ld.exe")
+set(CMAKE_AR "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
 set(CMAKE_COMPILER_IS_GNUCC 1)
@@ -68,7 +68,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "G:/Jet_brains_IDEs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;G:/Jet_brains_IDEs/CLion/bin/mingw/include;G:/Jet_brains_IDEs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;G:/Jet_brains_IDEs/CLion/bin/mingw/x86_64-w64-mingw32/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/include;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc;moldname;mingwex;kernel32")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "G:/Jet_brains_IDEs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0;G:/Jet_brains_IDEs/CLion/bin/mingw/lib/gcc;G:/Jet_brains_IDEs/CLion/bin/mingw/x86_64-w64-mingw32/lib;G:/Jet_brains_IDEs/CLion/bin/mingw/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib/gcc;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/x86_64-w64-mingw32/lib;C:/Users/prang/AppData/Local/Programs/CLion/bin/mingw/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
