@@ -3,17 +3,16 @@
 **QtC++ Password Manager** ist ein eigenständiger Passwort-Manager, entwickelt mit C++ und dem Qt Framework. Dieses Projekt zeigt meine Fähigkeiten in der Softwareentwicklung und -gestaltung, insbesondere in der Anwendung von C++ und Qt.
 
 ## Hauptfunktionen
-- Benutzeroberfläche: Vollständig in Qt erstellt, bietet die Anwendung eine intuitive 
-- Benutzeroberfläche zum Verwalten von Passwörtern.
+- Benutzeroberfläche: Vollständig in Qt erstellt, bietet die Anwendung eine intuitive Benutzeroberfläche zum Verwalten von Passwörtern.
 - Passwort-Generierung: Ermöglicht die Generierung starker Passwörter mit benutzerdefinierten Einstellungen für Zeichenarten und Länge.
-- Datenverschlüsselung: Passwörter werden mit einer benutzerdefinierten Verschlüsselungstechnologie gesichert.
-- Passwort-Management: Einfache Funktionen zum Hinzufügen, Bearbeiten und Löschen von Passworteinträgen.
+- Datenverschlüsselung: Passwörter werden mit einer eigenem Verschlüsselungsalgorithmus gesichert.
+- Passwort-Management: Funktionen zum Hinzufügen, Bearbeiten und Löschen von Passworteinträgen.
 ## Technische Details
 - Sprache: C++
 - Framework: Qt 5/6
 - Tools: CMake für das Build-System
 ## Beispielcode
-**Datenhandling (dataHandeling.cpp)**
+**1. Datenhandling (dataHandeling.cpp)**
 ```
 #include <QFile>
 #include <QTextStream>
@@ -70,7 +69,7 @@ QString MainWindow::genKey() {
     return key;
 }
 ```
-**Benutzeroberfläche (setupUI.cpp)**
+**2. Benutzeroberfläche (setupUI.cpp)**
 ```
 #include "MainWindow.h"
 
