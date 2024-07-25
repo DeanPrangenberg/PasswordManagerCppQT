@@ -9,7 +9,7 @@
 - Passwort-Management: Funktionen zum Hinzufügen, Bearbeiten und Löschen von Passworteinträgen.
 ## Technische Details
 - Sprache: C++
-- Framework: Qt 5/6
+- Framework: Qt 6
 - Tools: CMake für das Build-System
 ## Beispielcode
 **1. Datenhandling (dataHandeling.cpp)**
