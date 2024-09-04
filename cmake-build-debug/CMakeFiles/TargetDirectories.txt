@@ -1,5 +1,5 @@
-C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/PasswordManagerCppQT.dir
-C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir
-C:/GitHub/PasswordManager/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen.dir
+D:/MyRepo/c++ QT/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/PasswordManagerCppQT.dir
+D:/MyRepo/c++ QT/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/MyRepo/c++ QT/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/MyRepo/c++ QT/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen_timestamp_deps.dir
+D:/MyRepo/c++ QT/PasswordManagerCppQT/cmake-build-debug/CMakeFiles/PasswordManagerCppQT_autogen.dir

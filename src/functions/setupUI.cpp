@@ -27,6 +27,20 @@ void MainWindow::setupTopbar() {
 
     _topBarWidget->setGeometry(210, 0, _screenWidth - 210, 100);
 
+    _topBarWidget->setStyleSheet(QString("QLineEdit {"
+                                         "    border: 1px solid #BDBDBD; /* Rahmen des Eingabefelds */"
+                                         "    padding: 5px; /* Innenabstand */"
+                                         "    border-radius: 5px; /* Abgerundete Ecken */"
+                                         "}"
+                                         "QPushButton {"
+                                         "    background-color: #6495ED; /* Hintergrundfarbe der Schaltfläche */"
+                                         "    color: #FFFFFF; /* Textfarbe */"
+                                         "    padding: 5px; /* Innenabstand */"
+                                         "    border: 1px solid #0047AB; /* Kein Rahmen */"
+                                         "    border-radius: 5px; /* Abgerundete Ecken */"
+                                         "}")
+    );
+
     _topBarWidget->hide();
     connect(_ButtonStartSearch, SIGNAL(clicked()), this, SLOT(searchInList()));
     connect(_ButtonReload, SIGNAL(clicked()), this, SLOT(reloadList()));
@@ -42,8 +56,6 @@ void MainWindow::setupSidebar() {
     int spacingSide = 10;
     int buttonsInSideBar = 7;
     int buttonWidthSidebar = logoWidth - spacingSide;
-    int buttonHeightSidebar =
-            (_screenHeight - logoHeight - spacingButtonSidebar * (buttonsInSideBar + 1)) / buttonsInSideBar;
 
     // Logo
     _LabelLogo = new QLabel(this);
@@ -58,35 +70,33 @@ void MainWindow::setupSidebar() {
     _sideBarWidget->setFixedWidth(buttonWidthSidebar);
 
     _sideBarLayout = new QVBoxLayout(_sideBarWidget);
-    _sideBarLayout->setSpacing(spacingButtonSidebar);
-    _sideBarLayout->setContentsMargins(spacingSide, spacingSide, spacingSide, spacingSide);
 
     _ButtonAddEntry = new QPushButton("Add Entry", _sideBarWidget);
-    _ButtonAddEntry->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonAddEntry->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonAddEntry);
 
     _ButtonShowPasswords = new QPushButton("Show Passwords", _sideBarWidget);
-    _ButtonShowPasswords->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonShowPasswords->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonShowPasswords);
 
     _ButtonShowPasswordGen = new QPushButton("Password Gen", _sideBarWidget);
-    _ButtonShowPasswordGen->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonShowPasswordGen->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonShowPasswordGen);
 
     _ButtonDelPassword = new QPushButton("Delete Password", _sideBarWidget);
-    _ButtonDelPassword->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonDelPassword->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonDelPassword);
 
     _ButtonEditPassword = new QPushButton("Edit Password", _sideBarWidget);
-    _ButtonEditPassword->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonEditPassword->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonEditPassword);
 
     _ButtonChangeMasterPassword = new QPushButton("Change Master", _sideBarWidget);
-    _ButtonChangeMasterPassword->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonChangeMasterPassword->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);;
     _sideBarLayout->addWidget(_ButtonChangeMasterPassword);
 
     _ButtonOpenLockscreen = new QPushButton("Close Menu", _sideBarWidget);
-    _ButtonOpenLockscreen->setFixedSize(buttonWidthSidebar, buttonHeightSidebar);
+    _ButtonOpenLockscreen->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _sideBarLayout->addWidget(_ButtonOpenLockscreen);
 
     _sideBarWidget->setLayout(_sideBarLayout);
@@ -101,6 +111,12 @@ void MainWindow::setupSidebar() {
     connect(_ButtonAddEntry, SIGNAL(clicked()), this, SLOT(showAddEntry()));
 
     _sideBarWidget->hide();
+    _sideBarWidget->setStyleSheet(QString("QPushButton {"
+                                          "    background-color: #6495ED; /* Hintergrundfarbe der Schaltfläche */"
+                                          "    color: #FFFFFF; /* Textfarbe */"
+                                          "    border: 1px solid #0047AB; /* Kein Rahmen */"
+                                          "    border-radius: 10px; /* Abgerundete Ecken */"
+                                          "}"));
     _LabelLogo->hide();
     qDebug() << "Setup: Completed setupSidebar";
 }
@@ -115,7 +131,7 @@ void MainWindow::setupPasswordEdit() {
     mainLayout->setContentsMargins(30, 30, 30, 30);
 
     // Top section for input and search
-    QGroupBox * inputGroup = new QGroupBox("Edit Password Entry", this);
+    QGroupBox *inputGroup = new QGroupBox("Edit Password Entry", this);
     inputGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
     QVBoxLayout * inputLayout = new QVBoxLayout(inputGroup);
 
@@ -182,7 +198,7 @@ void MainWindow::setupPasswordEdit() {
     transferValuesButton->setFixedHeight(40);
 
     // Bottom section for displaying old and new values and save button
-    QGroupBox * displayGroup = new QGroupBox("Old and New Values", this);
+    QGroupBox *displayGroup = new QGroupBox("Old and New Values", this);
     displayGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
     QVBoxLayout * displayLayout = new QVBoxLayout(displayGroup);
 
@@ -258,26 +274,65 @@ void MainWindow::setupPasswordEdit() {
 void MainWindow::setupPasswordList() {
     qDebug() << "Setup: Starting setupPasswordList";
     _centerPasswordList = new QWidget(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout(_centerPasswordList);
+    _centerPasswordList->setStyleSheet(QLineEditStyle);
+    QVBoxLayout * mainLayout = new QVBoxLayout(_centerPasswordList);
 
     QGroupBox *listGroup = new QGroupBox("Password List", this);
-    QVBoxLayout *listLayout = new QVBoxLayout(listGroup);
+    listGroup->setStyleSheet(groupBoxStyle);
+    QVBoxLayout * listLayout = new QVBoxLayout(listGroup);
 
     _scrollArea = new QScrollArea(this);
-    QWidget *scrollWidget = new QWidget();
+    QWidget * scrollWidget = new QWidget();
     _gridLayout = new QGridLayout(scrollWidget);
 
     scrollWidget->setLayout(_gridLayout);
     _scrollArea->setWidget(scrollWidget);
     _scrollArea->setWidgetResizable(true);
     _scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    _scrollArea->setStyleSheet(QString(
+            "QScrollArea {"
+            "    border: 1px solid #BDBDBD; /* Rahmen des Scrollbereichs */"
+            "    border-radius: 5px; /* Abgerundete Ecken des Rahmens */"
+            "    background-color: #FFFFFF; /* Hintergrundfarbe */"
+            "}"
+            "QScrollBar:vertical {"
+            "    background-color: #F0F0F0; /* Hintergrundfarbe der vertikalen Scrollbar */"
+            "    width: 12px; /* Breite der Scrollbar */"
+            "    border: 1px solid #BDBDBD; /* Rahmen um die Scrollbar */"
+            "    margin: 15px 3px 15px 3px; /* Abstände */"
+            "    border-radius: 5px; /* Abgerundete Ecken */"
+            "}"
+            "QScrollBar::handle:vertical {"
+            "    background-color: #6495ED; /* Farbe des Scrollbalkens */"
+            "    min-height: 20px; /* Minimale Höhe des Scrollbalkens */"
+            "    border-radius: 5px; /* Abgerundete Ecken */"
+            "}"
+            "QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {"
+            "    background: none; /* Keine Zusatzlinien für die Scrollbar */"
+            "}"
+            "QScrollBar:horizontal {"
+            "    background-color: #F0F0F0; /* Hintergrundfarbe der horizontalen Scrollbar */"
+            "    height: 12px; /* Höhe der Scrollbar */"
+            "    border: 1px solid #BDBDBD; /* Rahmen um die Scrollbar */"
+            "    margin: 3px 15px 3px 15px; /* Abstände */"
+            "    border-radius: 5px; /* Abgerundete Ecken */"
+            "}"
+            "QScrollBar::handle:horizontal {"
+            "    background-color: #6495ED; /* Farbe des Scrollbalkens */"
+            "    min-width: 20px; /* Minimale Breite des Scrollbalkens */"
+            "    border-radius: 5px; /* Abgerundete Ecken */"
+            "}"
+            "QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {"
+            "    background: none; /* Keine Zusatzlinien für die Scrollbar */"
+            "}"
+    ));
 
     listLayout->addWidget(_scrollArea);
     listGroup->setLayout(listLayout);
 
     mainLayout->addWidget(listGroup);
     _centerPasswordList->setLayout(mainLayout);
-    _centerPasswordList->setGeometry(210, 100, _screenWidth - 210, _screenHeight - 100);
+    _centerPasswordList->setGeometry(210, 91, _screenWidth - 210, _screenHeight - 100);
 
     _centerPasswordList->hide();
     qDebug() << "Setup: Completed setupPasswordList";
@@ -311,7 +366,7 @@ void MainWindow::setupPasswordGen() {
     genLayout->setContentsMargins(20, 20, 20, 20);
 
     // Erstelle die Optionsgruppe
-    QGroupBox * optionsGroup = new QGroupBox("Password Generation Options", this);
+    QGroupBox *optionsGroup = new QGroupBox("Password Generation Options", this);
     QVBoxLayout * optionsLayout = new QVBoxLayout(optionsGroup);
 
     optionsLayout->addWidget(_allowLowAlphabet);
@@ -338,7 +393,7 @@ void MainWindow::setupPasswordGen() {
     genLayout->addWidget(optionsGroup);
 
     // Erstelle die Ausgabengruppe
-    QGroupBox * outputGroup = new QGroupBox("Generated Password", this);
+    QGroupBox *outputGroup = new QGroupBox("Generated Password", this);
     QVBoxLayout * outputLayout = new QVBoxLayout(outputGroup);
 
     _passwordOutput = new QLineEdit(this);
@@ -375,9 +430,20 @@ void MainWindow::setupLockscreen() {
 
     _inputField = new QLineEdit(_lockscreenWidget);
     _inputField->setFixedHeight(buttonHeight);
+    _inputField->setStyleSheet(QString("QLineEdit {"
+                                       "    border: 1px solid #BDBDBD; /* Rahmen des Eingabefelds */"
+                                       "    padding: 5px; /* Innenabstand */"
+                                       "    border-radius: 5px; /* Abgerundete Ecken */"
+                                       "}"));
 
     _buttonConfirm = new QPushButton("Confirm", _lockscreenWidget);
     _buttonConfirm->setFixedHeight(buttonHeight);
+    _buttonConfirm->setStyleSheet(QString("QPushButton {"
+                                          "    background-color: #6495ED; /* Hintergrundfarbe der Schaltfläche */"
+                                          "    color: #FFFFFF; /* Textfarbe */"
+                                          "    border: 1px solid #0047AB; /* Kein Rahmen */"
+                                          "    border-radius: 5px; /* Abgerundete Ecken */"
+                                          "}"));
 
     _lockscreenLayout->addWidget(_inputField);
     _lockscreenLayout->addWidget(_buttonConfirm);
@@ -391,12 +457,12 @@ void MainWindow::setupLockscreen() {
 
 void MainWindow::setupEditMaster() {
     _centerMasterPasswordEdit = new QWidget(this);
-    QVBoxLayout *editLayout = new QVBoxLayout(_centerMasterPasswordEdit);
+    QVBoxLayout * editLayout = new QVBoxLayout(_centerMasterPasswordEdit);
     editLayout->setSpacing(10);
     editLayout->setContentsMargins(20, 20, 20, 20);
 
     QGroupBox *editGroup = new QGroupBox("Edit Master Password", this);
-    QGridLayout *groupLayout = new QGridLayout(editGroup);
+    QGridLayout * groupLayout = new QGridLayout(editGroup);
 
     _oldMasterPasswordLabel = new QLabel("Old Master Password:", this);
     _inputOldMasterPassword = new QLineEdit(this);
@@ -434,7 +500,7 @@ void MainWindow::setupPasswordDel() {
     mainLayout->setContentsMargins(30, 30, 30, 30);
 
     // Top section for input and search/delete buttons
-    QGroupBox * inputGroup = new QGroupBox("Delete Password Entry", this);
+    QGroupBox *inputGroup = new QGroupBox("Delete Password Entry", this);
     inputGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
     QVBoxLayout * inputLayout = new QVBoxLayout(inputGroup);
 
@@ -517,7 +583,7 @@ void MainWindow::setupAddPassword() {
     mainLayout->setContentsMargins(30, 30, 30, 30);
 
     // Top section for input
-    QGroupBox * inputGroup = new QGroupBox("Add Password Entry", this);
+    QGroupBox *inputGroup = new QGroupBox("Add Password Entry", this);
     inputGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
     QVBoxLayout * inputLayout = new QVBoxLayout(inputGroup);
 
@@ -562,7 +628,7 @@ void MainWindow::setupAddPassword() {
     _inputAddPassword->setFixedHeight(40);
 
     // Bottom section for displaying new values and save button
-    QGroupBox * displayGroup = new QGroupBox("New Values", this);
+    QGroupBox *displayGroup = new QGroupBox("New Values", this);
     displayGroup->setStyleSheet("QGroupBox { font-weight: bold; font-size: 18px; }");
     QVBoxLayout * displayLayout = new QVBoxLayout(displayGroup);
 

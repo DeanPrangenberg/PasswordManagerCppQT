@@ -13,8 +13,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     // setup all widgets
     setupLockscreen();
-    setupSidebar();
-    setupTopbar();
     setupPasswordList();
     setupPasswordGen();
     setupEditMaster();
@@ -22,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setupPasswordDel();
     setupPasswordEdit();
     setupPasswordDel();
+    setupSidebar();
+    setupTopbar();
 }
 
 ///////////////

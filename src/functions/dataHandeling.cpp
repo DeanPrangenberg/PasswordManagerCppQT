@@ -82,7 +82,6 @@ void MainWindow::populateGrid() {
         lineEdit->setAlignment(Qt::AlignCenter);
         lineEdit->setFont(font);
         lineEdit->setFixedHeight(30);
-        lineEdit->setStyleSheet("QLineEdit { background: transparent; border: none; }");
     };
 
     configureLineEditAsLabel(headerRowNum, font);

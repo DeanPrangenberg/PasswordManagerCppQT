@@ -1,7 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PasswordManagerCppQT_autogen.dir/AutogenUsed.txt"
-  "CMakeFiles/PasswordManagerCppQT_autogen.dir/ParseCache.txt"
-  "PasswordManagerCppQT_autogen"
   "CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/PasswordManagerCppQT.dir/PasswordManagerCppQT_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/PasswordManagerCppQT.dir/main.cpp.obj"
@@ -16,6 +13,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/PasswordManagerCppQT.dir/src/functions/setupUI.cpp.obj.d"
   "CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj"
   "CMakeFiles/PasswordManagerCppQT.dir/src/functions/slots.cpp.obj.d"
+  "CMakeFiles/PasswordManagerCppQT_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/PasswordManagerCppQT_autogen.dir/ParseCache.txt"
+  "PasswordManagerCppQT_autogen"
   "PasswordManagerCppQT.exe"
   "PasswordManagerCppQT.exe.manifest"
   "PasswordManagerCppQT.pdb"

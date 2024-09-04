@@ -32,57 +32,99 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
 private slots:
+
     void addPasswordEntry();
+
     void showPasswords();
+
     void showPasswordGen();
+
     void showMasterPasswordEdit();
+
     void showPasswordDel();
+
     void showAddEntry();
+
     void deletePasswordEntry();
+
     void showEditPassword();
+
     void checkChangeMasterPassword();
+
     void lockScreen();
+
     void ConfirmPassword();
+
     void onAllowLowAlphabetToggled(bool checked);
+
     void onAllowUpAlphabetToggled(bool checked);
+
     void onAllowNumbersToggled(bool checked);
+
     void onAllowSymbolsToggled(bool checked);
+
     void startPasswordGen();
+
     void searchRowEdit();
+
     void searchRowDel();
+
     void transferValues();
+
     void changePasswordEntry();
+
     void searchInList();
+
     void reloadList();
 
 private:
     // UI setup
     void setupSidebar();
+
     void setupTopbar();
+
     void setupPasswordList();
+
     void setupLockscreen();
+
     void setupPasswordGen();
+
     void setupPasswordEdit();
+
     void setupPasswordDel();
+
     void setupAddPassword();
+
     void setupEditMaster();
 
     // on/off Ui
     void hideAll();
+
     void showStdMenu();
+
     void showBars();
 
     // data handling
     void populateGrid();
+
     void checkIfFirstStart();
+
     void checkPassword();
+
     void fillPasswords();
+
     void encryptPasswords();
+
     void decryptPasswords();
+
     QString genKey();
+
     QString genPassword(int length, QString allowedChars);
+
     QString encryptString(const QString &input, const QString &key);
+
     QString decryptString(const QString &input, const QString &key);
+
     void updateAllowedCharacters();
 
     // Lockscreen
@@ -187,8 +229,31 @@ private:
 
     // Global var
     QString _masterPassword;
-
     QString _allowedCharsPasswordGen;
+
+    // Style
+    QString groupBoxStyle = QString(
+            "QGroupBox {"
+            "    border: 1px solid #BDBDBD; /* Rahmen der GroupBox */"
+            "    border-radius: 5px; /* Abgerundete Ecken */"
+            "    margin-top: 20px; /* Abstand für den Titel */"
+            "    background-color: #6495ED; /* Hintergrundfarbe */"
+            "}"
+            "QGroupBox::title {"
+            "    subcontrol-origin: margin; /* Ursprung des Titels */"
+            "    subcontrol-position: top left; /* Position des Titels */"
+            "    padding: 0 5px; /* Innenabstand des Titels */"
+            "    color: #0047AB; /* Textfarbe des Titels */"
+            "    background-color: #FFFFFF; /* Hintergrundfarbe des Titels (falls benötigt) */"
+            "    border-radius: 3px; /* Abgerundete Ecken des Titels */"
+            "}"
+    );
+    QString QLineEditStyle = QString("QLineEdit {"
+                                "    border: 1px solid #BDBDBD; /* Rahmen des Eingabefelds */"
+                                "    padding: 5px; /* Innenabstand */"
+                                "    border-radius: 10px; /* Abgerundete Ecken */"
+                                "}"
+    );
 };
 
 #endif // PASSWORDMANAGERCPPQT_MAINWINDOW_H
