@@ -100,4 +100,4 @@ void MainWindow::setupMainWindow() {
 ```
 
 ## Kontakt
-Für Fragen oder Vorschläge können Sie mich unter prangenbergdean@gmai.com kontaktieren.
+Für Fragen oder Vorschläge können Sie mich unter prangenbergdean@gmail.com kontaktieren.
