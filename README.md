@@ -1,6 +1,6 @@
-# QtC++ Password Manager
+# Qt C++ Password Manager
 ## Projektübersicht
-**QtC++ Password Manager** ist ein eigenständiger Passwort-Manager, entwickelt mit C++ und dem Qt Framework. Dieses Projekt zeigt meine Fähigkeiten in der Softwareentwicklung und -gestaltung, insbesondere in der Anwendung von C++ und Qt.
+**Qt C++ Password Manager** ist ein eigenständiger Passwort-Manager, entwickelt mit C++ und dem Qt Framework. Dieses Projekt zeigt meine Fähigkeiten in der Softwareentwicklung und -gestaltung, insbesondere in der Anwendung von C++ und Qt.
 
 ## Hauptfunktionen
 - Benutzeroberfläche: Vollständig in Qt erstellt, bietet die Anwendung eine intuitive Benutzeroberfläche zum Verwalten von Passwörtern.
