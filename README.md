@@ -12,6 +12,6 @@
 - **Language**: C++
 - **Framework**: Qt 6
 - **Tools**: CMake for the build system
-- 
+
 ## Contact
 For questions or suggestions, you can contact me at prangenbergdean@gmail.com.
