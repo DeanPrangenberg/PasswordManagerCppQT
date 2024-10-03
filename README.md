@@ -13,5 +13,8 @@
 - **Framework**: Qt 6
 - **Tools**: CMake for the build system
 
+## License
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
 ## Contact
 For questions or suggestions, you can contact me at prangenbergdean@gmail.com.
