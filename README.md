@@ -1,103 +1,17 @@
 # Qt C++ Password Manager
-## Projektübersicht
-**Qt C++ Password Manager** ist ein eigenständiger Passwort-Manager, entwickelt mit C++ und dem Qt Framework. Dieses Projekt zeigt meine Fähigkeiten in der Softwareentwicklung und -gestaltung, insbesondere in der Anwendung von C++ und Qt.
+## Project Overview
+**Qt C++ Password Manager** is a standalone password manager developed with C++ and the Qt framework. This project marks my first significant undertaking in software development and design, focusing on the use of C++ and Qt. However, it is important to note that it is not secure.
 
-## Hauptfunktionen
-- Benutzeroberfläche: Vollständig in Qt erstellt, bietet die Anwendung eine intuitive Benutzeroberfläche zum Verwalten von Passwörtern.
-- Passwort-Generierung: Ermöglicht die Generierung starker Passwörter mit benutzerdefinierten Einstellungen für Zeichenarten und Länge.
-- Datenverschlüsselung: Passwörter werden mit einer eigenem Verschlüsselungsalgorithmus gesichert.
-- Passwort-Management: Funktionen zum Hinzufügen, Bearbeiten und Löschen von Passworteinträgen.
-## Technische Details
-- Sprache: C++
-- Framework: Qt 6
-- Tools: CMake für das Build-System
-## Beispielcode
-**1. Datenhandling (dataHandeling.cpp)**
-```
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
+## Main Features
+- **User Interface**: Fully created in Qt, the application provides an intuitive interface for managing passwords.
+- **Password Generation**: Allows the generation of strong passwords with customizable settings for character types and length.
+- **Data Encryption**: Passwords are secured using a custom encryption algorithm.
+- **Password Management**: Features for adding, editing, and deleting password entries.
 
-void MainWindow::encryptPasswords() {
-    QString filePath = "../res/passwords.txt";
-    QFile file(filePath);
-
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qDebug() << "Fehler beim Öffnen der Datei zum Schreiben:" << file.errorString();
-        return;
-    }
-
-    QTextStream out(&file);
-    QString key = genKey();
-
-    out << key << "\n";
-    out << encryptString(_masterPassword, key) << "\n";
-
-    for (const QVector<QString> &tempVec: _passwordList) {
-        for (const QString &str: tempVec) {
-            QString encryptedStr = encryptString(str, key);
-            out << encryptedStr << "\n";
-        }
-    }
-
-    file.close();
-    qDebug() << "Strings wurden erfolgreich in" << filePath << "geschrieben.";
-}
-
-QString MainWindow::genKey() {
-    QString key;
-    QVector<int> posNums;
-
-    for (int i = 0; i < allChars.size(); ++i) {
-        int random_num;
-        bool num_in_list;
-        do {
-            random_num = QRandomGenerator::global()->bounded(allChars.size());
-            num_in_list = false;
-            for (int j = 0; j < i; j++) {
-                if (posNums[j] == random_num) {
-                    num_in_list = true;
-                    break;
-                }
-            }
-        } while (num_in_list);
-        posNums.push_back(random_num);
-        key += allChars[random_num];
-    }
-
-    qDebug() << "The Gen Key is:" << key;
-    return key;
-}
-```
-**2. Benutzeroberfläche (setupUI.cpp)**
-```
-#include "MainWindow.h"
-
-void MainWindow::setupMainWindow() {
-    // UI Komponenten initialisieren
-    _topBarLayout = new QHBoxLayout();
-    _sideBarLayout = new QVBoxLayout();
-    _centerLayout = new QVBoxLayout();
-
-    _ButtonShowPasswords = new QPushButton("Passwörter anzeigen");
-    _ButtonShowPasswordGen = new QPushButton("Passwort generieren");
-    _ButtonAddEntry = new QPushButton("Eintrag hinzufügen");
-
-    _topBarLayout->addWidget(_ButtonShowPasswords);
-    _topBarLayout->addWidget(_ButtonShowPasswordGen);
-    _topBarLayout->addWidget(_ButtonAddEntry);
-
-    _sideBarLayout->addLayout(_topBarLayout);
-    
-    // Setze Layouts für das Hauptfenster
-    QWidget *centralWidget = new QWidget();
-    centralWidget->setLayout(_sideBarLayout);
-    setCentralWidget(centralWidget);
-
-    setWindowTitle("QtC++ Password Manager");
-    resize(800, 600);
-}
-```
-
-## Kontakt
-Für Fragen oder Vorschläge können Sie mich unter prangenbergdean@gmail.com kontaktieren.
+## Technical Details
+- **Language**: C++
+- **Framework**: Qt 6
+- **Tools**: CMake for the build system
+- 
+## Contact
+For questions or suggestions, you can contact me at prangenbergdean@gmail.com.
